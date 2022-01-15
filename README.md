@@ -124,6 +124,23 @@ If you want to maximise the chances of detecting a player's name and you are not
 
 
 <br/><br/>
+## FAQ
+
+#### What video formats are allowed?
+Anything that OpenCV can read. This program uses only very basic error checking in regards to reading a file as a video.
+
+
+#### How can I skip some files in a folder?
+Use your CLI's glob / wildcard capabilities.\
+Example using Windows PowerShell:\
+`python C:\Users\jhalb\Downloads\ds3_rc.py $(dir C:\Users\jhalb\Videos\*.mp4)`
+
+Example using Bash:\
+`python3 /home/jhalb/code/ds3_rc.py /home/jhalb/videos/*.mp4`
+
+
+
+<br/><br/>
 ## Support
 Please report the following:\
 Bugs, errors, problems\
