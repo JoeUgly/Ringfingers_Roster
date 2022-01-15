@@ -65,10 +65,10 @@ You know you fought this person before, but you don't want to manually look thro
 
 <br/><br/>
 ## Getting Started
-The simpliest way to run this program is use one of the "frozen" executables.
-Windows 10:
-Windows 11:
-Ubuntu 19.04 Linux:
+The simpliest way to run this program is use one of the "frozen" executables.\
+Windows 10: \
+Windows 11: \
+Ubuntu 19.04 Linux: 
 
 These executables will contain the Python interpreter, the Python script, and all the dependencies.
 
@@ -76,12 +76,12 @@ These executables will contain the Python interpreter, the Python script, and al
 <br/><br/>
 If you are not using one the platforms listed above then you'll have to do it manualy.
 
-Prerequisites:
+Prerequisites:\
 Python Version 3.6+ [Available here](https://www.python.org/downloads/)
 
 Download my Python script
 
-Install the following Python packages:
+Install the following Python packages:\
 pytesseract
 
 Example installation:\
