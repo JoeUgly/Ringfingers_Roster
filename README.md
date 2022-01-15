@@ -15,7 +15,9 @@ use python to glob? -
 config file?
 optional fuzzy matching for phrases
 move .py into dir then just click (make executable?)
-output default to dir of code?
+if multi dirs output default to cwd or dir of code?
+tally wins vs loses against player? win percent as invader vs ganker?
+--lenient for missing either pre or suf, --verylenient for missing both?
 
 
 Phase 1:
