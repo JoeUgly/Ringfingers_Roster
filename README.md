@@ -62,7 +62,7 @@ Support
 
 
 
-Summary
+## Summary
 Scans through all your gameplay videos and extracts the name of each player you encounter.\
 The program outputs a list of player names, along with the name of each video which they were found in.
 
@@ -73,7 +73,7 @@ You know you fought this person before, but you don't want to manually look thro
 
 
 
-Getting Started
+## Getting Started
 The following Python packages are required:
 pytesseract
 
@@ -93,18 +93,19 @@ See the "Input" section for more detail.
 
 
 
-Limitations
-Nameplate not caught
+## Limitations
+#### Nameplate not caught
 This program detects player names **ONLY** when the nameplate appears.
+Doesn't work on arena fights.
 This program assumes the entire nameplate animation (the nameplate message fading in and out multiple times) is present in the video.
 
 For performance reasons this program does not check every frame. In fact, it checks only one frame per ~1.1 seconds of video. If any part of the nameplate animation is missing from the video, then this program might not capture that player's name.
 
-Long message
+#### Long message
 Some messages can be so long that they extend past the edge of the nameplate and therefore not detected.
 Some messages consist of two lines and therefore the useful text is not in the excpected location and also not detected.
 
-Misinterpreted characters in player name
+#### Misinterpreted characters in player name
 Computers are bad at reading text from an image. Therefore, this program will not be 100% accurate.
 It's common for a player name to appear in the output multiple times with slight errors.
 Example:
@@ -117,7 +118,7 @@ Example:
 For this reason, video resolution of at least 720p is strongly recommended. Also, Tesseract version 5.0+.
 
 
-Misinterpreted characters in prefix or suffix
+#### Misinterpreted characters in prefix or suffix
 The name extraction consists of three steps. Recognize the prefix phrase, recognize the suffix phrase, extract the leftover name.
 Using the example message "Phantom XXsoandsoXX has been summoned":
 Prefix: Phantom
@@ -134,7 +135,7 @@ If you want to maximise the chances of detecting a player's name and you are not
 
 
 
-Input
+## Input
 You can supply as arguments any combination of videos and directories.
 
 This program will assume all arguments are either videos or directories containing videos, unless the argument begins with --.
@@ -144,7 +145,7 @@ Directory searches are recursive by default. Disable this with the --nonrecursiv
 Only directories given AFTER the --nonrecursive option will be nonrecursive.
 
 
-Merge
+### Merge
 Simply place the result file in the same directory as the videos you are processing.
 Alternatively, you can explicitly give the absolute path of the result file as an argument.
 Example:
@@ -170,7 +171,7 @@ python3 /home/jhalb/code/ds3_rc.py /home/jhalb/videos/*.mp4
 
 
 
-Output
+## Output
 This program outputs the results in JSON / Python dictionary format. The key is the player name and the value is a list of file paths (the names of the videos in which the player's name was found).
 Example:
 
@@ -185,7 +186,7 @@ Example:
 
 
 
-Features
+## Features
 
 	Resumption
 This program saves its progress to a file after each video is processed.
@@ -215,7 +216,7 @@ To skip videos only when they have the same name and location invoke the --noski
 
 
 
-Performance
+## Performance
 Reading and processing video data is slow. It is mostly dependent on your CPU and the video resolution.
 I have made every effort to make this program as fast as possible.
 
@@ -225,9 +226,7 @@ I have made every effort to make this program as fast as possible.
 
 
 
-
-
-Support
+## Support
 Please report the following:
 Bugs, errors, problems
 Your PC specs and performance (the last few lines of the program's CLI output)
@@ -241,7 +240,7 @@ Any other questions, requests, suggestions, comments,  etc
 
 
 
-Detailed Description
+## Detailed Description
 
 The program begins by putting all the videos to be processed into a list.
 
