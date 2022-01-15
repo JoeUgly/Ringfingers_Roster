@@ -14,11 +14,11 @@ todo
 email
 discord
 example of nameplate image
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -
 use python to glob? -
 config file?
 optional fuzzy matching for phrases
-move .py into dir then just click  (make executable?)
+move .py into dir then just click (make executable?)
 output default to dir of code?
 
 
@@ -49,16 +49,18 @@ args
 ### Table of Contents
 * [Summary](#Summary)
 * [Getting Started](#Getting-Started)
-* [Description](#Description)
 * [Limitations](#Limitations)
+* [FAQ](#FAQ)
+* [Support](#Support)
+* [Advanced Usage](#Advanced-Usage)
+* [](#)
 Input
 Output
 OCR
 Performance
 Features
 Optional arguments
-* [FAQ](#FAQ)
-* [Support](#Support)
+
 
 
 
