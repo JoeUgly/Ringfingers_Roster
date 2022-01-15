@@ -65,7 +65,23 @@ You know you fought this person before, but you don't want to manually look thro
 
 <br/><br/>
 ## Getting Started
-The following Python packages are required:
+The simpliest way to run this program is use one of the "frozen" executables.
+Windows 10:
+Windows 11:
+Ubuntu 19.04 Linux:
+
+These executables will contain the Python interpreter, the Python script, and all the dependencies.
+
+
+<br/><br/>
+If you are not using one the platforms listed above then you'll have to do it manualy.
+
+Prerequisites:
+Python Version 3.6+ [Available here](https://www.python.org/downloads/)
+
+Download my Python script
+
+Install the following Python packages:
 pytesseract
 
 Example installation:\
