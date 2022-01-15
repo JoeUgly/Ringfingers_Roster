@@ -67,11 +67,11 @@ The following Python packages are required:
 pytesseract
 
 Example installation:\
-pip install pytesseract
+`pip install pytesseract`
 
 To run the program, invoke the Python script along with the folder(s) containing your videos.
 Example:\
-python /path/to/code/ds3_rc.py /path/to/videos/
+`python /path/to/code/ds3_rc.py /path/to/videos/`
 
 Alternatively, if you really don't want to mess with a CLI, place the ds3_rc.py file in the same folder as your videos and double click to run.
 
@@ -96,11 +96,11 @@ Some messages consist of two lines and therefore the useful text is not in the e
 Computers are bad at reading text from an image. Therefore, this program will not be 100% accurate.
 It's common for a player name to appear in the output multiple times with slight errors.
 Example:
-{
+`{
 "Player_1": ["/path/to/video1.mkv"],
 "PIayer__!": ["/path/to/video1.mkv"],
 ...
-}
+}`
 
 For this reason, video resolution of at least 720p is strongly recommended. Also, Tesseract version 5.0+.
 
@@ -114,16 +114,16 @@ Player name: XXsoandsoXX
 An exact match for both the preffix and the suffix is required. 
 A single misinterpreted character in the prefix / suffix will cause the frame to be discarded.
 
-This behavior can be changed to be more lenient by invoking the --loose?? option.
-Using --loose?? will accept all nameplate text, even without a prefix or suffix match. This will cause many more entries into the output file, many of which will be false positives.
+This behavior can be changed to be more lenient by invoking the `--loose` option.
+Using `--loose` will accept all nameplate text, even without a prefix or suffix match. This will cause many more entries into the output file, many of which will be false positives.
 If you want to maximise the chances of detecting a player's name and you are not concerned about a somewhat bloated output file, then use this option.
 
 
 <br/><br/>
 ## Support
-Please report the following:
-Bugs, errors, problems
-Your PC specs and performance (the last few lines of the program's CLI output)
+Please report the following:\
+Bugs, errors, problems\
+Your PC specs and performance (the last few lines of the program's CLI output)\
 Any other questions, requests, suggestions, comments,  etc
 <br/><br/>
 
