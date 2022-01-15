@@ -129,7 +129,8 @@ If you want to maximise the chances of detecting a player's name and you are not
 #### What video formats are allowed?
 Anything that OpenCV can read. This program uses only very basic error checking in regards to reading a file as a video.
 
-
+	
+<br/><br/>
 #### How can I skip some files in a folder?
 Use your CLI's glob / wildcard capabilities.\
 Example using Windows PowerShell:\
