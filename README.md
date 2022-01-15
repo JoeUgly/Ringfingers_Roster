@@ -48,15 +48,15 @@ args
 * [Summary](#Summary)
 * [Getting Started](#Getting-Started)
 * [Description](#Description)
-Limitations
+* [Limitations](#Limitations)
 Input
 Output
 OCR
 Performance
 Features
 Optional arguments
-FAQ
-Support
+* [FAQ](#FAQ)
+* [Support](#Support)
 
 
 
@@ -77,12 +77,12 @@ You know you fought this person before, but you don't want to manually look thro
 The following Python packages are required:
 pytesseract
 
-Example installation:
+Example installation:\
 pip install pytesseract
 
 
 To run the program, invoke the Python script along with the folder(s) containing your videos.
-Example:
+Example:\
 python /path/to/code/ds3_rc.py /path/to/videos/
 
 
@@ -94,6 +94,7 @@ See the "Input" section for more detail.
 
 
 ## Limitations
+
 #### Nameplate not caught
 This program detects player names **ONLY** when the nameplate appears.
 Doesn't work on arena fights.
