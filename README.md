@@ -116,7 +116,7 @@ Suffix: has been summoned\
 Player name: XXsoandsoXX
 
 An exact match for both the preffix and the suffix is required. \
-A single misinterpreted character in the prefix / suffix will cause the frame to be discarded.
+A single misinterpreted character in the prefix / suffix will cause the frame (and name) to be discarded.
 
 This behavior can be changed to be more lenient by invoking the `--loose` option.\
 Using `--loose` will accept all nameplate text, even without a prefix or suffix match. This will cause many more entries into the output file, many of which will be false positives.\
