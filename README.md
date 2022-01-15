@@ -77,8 +77,6 @@ Example:\
 
 Alternatively, if you really don't want to mess with a CLI, place the ds3_rc.py file in the same folder as your videos and double click to run.
 
-See the "Input" section for more detail.
-
 
 <br/><br/>
 ## Limitations and Known Bugs
