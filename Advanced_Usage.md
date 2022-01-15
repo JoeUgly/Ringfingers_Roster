@@ -48,7 +48,7 @@ Example using Bash:\
 <br/><br/>
 ## Output
 This program outputs the results in JSON / Python dictionary format. The key is the player name and the value is a list of file paths (the names of the videos in which the player's name was found).\
-Example:\
+Example:
 ```
 {
 "Motion_1": ["/path/to/video1.mkv"],
@@ -61,7 +61,7 @@ Example:\
 <br/><br/>
 ## Features
 
-	Resumption
+#### Resumption
 This program saves its progress to a file after each video is processed.
 This allows for a resumption feature which serves three purposes:
 1. If an error occurs, you don't need to start over from the beginning.
@@ -77,7 +77,7 @@ The results filename must start with "ds3_rc_results".
 
 
 
-	Skip same filename in different locations?
+#### Skip same filename in different locations?
 By default this program will skip videos with the same filename, even if they are in different folders.
 Example (the second video will be skipped):
 C:\Users\jhalb\Desktop\video_1.mkv
