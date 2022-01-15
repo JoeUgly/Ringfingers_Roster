@@ -98,11 +98,11 @@ The program begins by putting all the videos to be processed into a list.
 
 Two threads are started. One thread extracts frames from the video and puts the frames in to a queue. The other thread takes a frame from the queue and processes it.
 
-Frame extraction thread\
+**Frame extraction thread**\
 This thread iterates over every video in the list. Videos are read using CV2 (OpenCV) and frames are stored as Numpy arrays.\
 Every 67th frame (assuming a 60 fps video) is extracted because that is the minimum sampling rate required to guarantee nameplate recognition. The nameplate appears three times, fading to transparent in between. This program aims to select a frame containing the nameplate at least one of the three times when it is completely opaque. Choosing a less frequent sampling rate would increase performance, but decrease the quality of the results.
 
-Frame processing thread\
+**Frame processing thread**\
 After a frame is taken from the queue, it is cropped to a small area near the top of the nameplate. The average brightness of this small area is determined. If the brightness is too high, then it is assumed that a nameplate message is not present and the frame is discarded.
 
 If a nameplate is determined to likely be present, then the nameplate is cropped where the text is located.
@@ -118,6 +118,7 @@ Another frame is taken from the queue and the cycle repeats.
 When both threads conclude, the results and stats are displayed.
 
 
+<br/><br/>
 
 
 
