@@ -96,11 +96,11 @@ Some messages consist of two lines and therefore the useful text is not in the e
 Computers are bad at reading text from an image. Therefore, this program will not be 100% accurate.
 It's common for a player name to appear in the output multiple times with slight errors.
 Example:
-`{
+```{
 "Player_1": ["/path/to/video1.mkv"],
 "PIayer__!": ["/path/to/video1.mkv"],
 ...
-}`
+}```
 
 For this reason, video resolution of at least 720p is strongly recommended. Also, Tesseract version 5.0+.
 
