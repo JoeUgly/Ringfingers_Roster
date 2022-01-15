@@ -5,10 +5,6 @@
 ## Extract other player's names from your gameplay videos
 
 
-
-
-
-
 todo
 
 email
@@ -37,7 +33,6 @@ Quality of results
 Phase 3:
 Performance
 
-
 args
 	--nonrecursive
 	--strict or --loose phrase/name detection
@@ -53,8 +48,6 @@ args
 * [FAQ](#FAQ)
 * [Support](#Support)
 * [Advanced Usage](/Advanced_Usage.md)
-
-
 
 
 
@@ -91,7 +84,7 @@ See the "Input" section for more detail.
 
 
 
-## Limitations
+## Limitations and Known Bugs
 
 #### Nameplate not caught
 This program detects player names **ONLY** when the nameplate appears.
