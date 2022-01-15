@@ -19,7 +19,7 @@ If no files or directories are given, the program will use the current working d
 Directory searches are recursive by default. Disable this with the `--nonrecursive` option.
 Only directories given AFTER the --nonrecursive option will be nonrecursive.\
 Example:
-`python C:\Users\jhalb\Downloads\ds3_rc.py C:\Users\jhalb\folder_1\ --nonrecursive C:\Users\jhalb\folder_2\`
+`python C:\Users\jhalb\Downloads\ds3_rc.py C:\Users\jhalb\folder_1\ --nonrecursive C:\Users\jhalb\folder_2\`\
 Only C:\Users\jhalb\folder_1\ will be searched recursively.
 
 
