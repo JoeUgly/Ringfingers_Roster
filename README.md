@@ -75,6 +75,8 @@ To run the program, invoke the Python script along with the folder(s) containing
 Example:\
 `python /path/to/code/ds3_rc.py /path/to/videos/`
 
+
+<br/><br/>
 Alternatively, if you really don't want to mess with a CLI, place the ds3_rc.py file in the same folder as your videos and double click to run.
 
 
