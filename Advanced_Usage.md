@@ -1,6 +1,6 @@
 # Advanced Usage
 
-
+### Table of Contents
 * [Input](#Input)
 * [Output](#Output)
 * [Features](#Features)
@@ -9,10 +9,7 @@
 * [Detailed Description](#Detailed-Description)
 
 
-
-
-
-
+<br/><br/>
 ## Input
 You can supply as arguments any combination of videos and directories.
 
@@ -23,47 +20,45 @@ Directory searches are recursive by default. Disable this with the --nonrecursiv
 Only directories given AFTER the --nonrecursive option will be nonrecursive.
 
 
+<br/><br/>
 ### Merge
-Simply place the result file in the same directory as the videos you are processing.
-Alternatively, you can explicitly give the absolute path of the result file as an argument.
-Example:
-python ds3_rc.py /path/to/videos/ /path/to/ds3_rc_results.txt
+Simply place the result file in the same directory as the videos you are processing.\
+Alternatively, you can explicitly give the absolute path of the result file as an argument.\
+Example:\
+`python ds3_rc.py /path/to/videos/ /path/to/ds3_rc_results.txt`
 
 The filename must begin with "ds3_rc_results".
 You can merge multiple result files.
 
 
 
+What video formats are allowed?\
+Anything that OpenCV can read. This program uses only very basic error checking in regards to reading a file as a video.
 
 
-What video formats are allowed? Anything that OpenCV can read. This program uses only very basic error checking in regards to reading a file as a video.
+How can I skip some files in a folder?\
+Use your CLI's glob / wildcard capabilities.\
+Example using Windows PowerShell:\
+`python C:\Users\jhalb\Downloads\ds3_rc.py $(dir C:\Users\jhalb\Videos\*.mp4)`
+
+Example using Bash:\
+`python3 /home/jhalb/code/ds3_rc.py /home/jhalb/videos/*.mp4`
 
 
-How can I skip some files in a folder? Use your CLI's glob / wildcard capabilities.
-Example using Windows PowerShell:
-python C:\Users\jhalb\Downloads\ds3_rc.py $(dir C:\Users\jhalb\Videos\*.mp4)
-
-Example using Bash:
-python3 /home/jhalb/code/ds3_rc.py /home/jhalb/videos/*.mp4
-
-
-
-
+<br/><br/>
 ## Output
-This program outputs the results in JSON / Python dictionary format. The key is the player name and the value is a list of file paths (the names of the videos in which the player's name was found).
-Example:
-
+This program outputs the results in JSON / Python dictionary format. The key is the player name and the value is a list of file paths (the names of the videos in which the player's name was found).\
+Example:\
+```
 {
 "Motion_1": ["/path/to/video1.mkv"],
 
 "Noob_Slayer_2": ["/path/to/video3.mp4", "/path/to/video1.mkv", "/path/to/video4.mkv"]
 }
+```
 
 
-
-
-
-
+<br/><br/>
 ## Features
 
 	Resumption
@@ -93,7 +88,7 @@ To skip videos only when they have the same name and location invoke the --noski
 
 
 
-
+<br/><br/>
 ## Performance
 Reading and processing video data is slow. It is mostly dependent on your CPU and the video resolution.
 I have made every effort to make this program as fast as possible.
@@ -103,9 +98,7 @@ I have made every effort to make this program as fast as possible.
 
 
 
-
-
-
+<br/><br/>
 ## Detailed Description
 
 The program begins by putting all the videos to be processed into a list.
