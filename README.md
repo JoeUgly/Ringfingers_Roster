@@ -41,6 +41,7 @@ args
 	--multi thread count?
 
 
+<br/><br/>
 ### Table of Contents
 * [Summary](#Summary)
 * [Getting Started](#Getting-Started)
@@ -50,20 +51,17 @@ args
 * [Advanced Usage](/Advanced_Usage.md)
 
 
-
-
 <br/><br/>
 ## Summary
 Scans through all your gameplay videos and extracts the name of each player you encounter.\
 The program outputs a list of player names, along with the name of each video which they were found in.
-
 
 Use case:\
 You know you fought this person before, but you don't want to manually look through hours of gameplay footage to find the right video(s).
 
 
 
-
+<br/><br/>
 ## Getting Started
 The following Python packages are required:
 pytesseract
@@ -71,19 +69,16 @@ pytesseract
 Example installation:\
 pip install pytesseract
 
-
 To run the program, invoke the Python script along with the folder(s) containing your videos.
 Example:\
 python /path/to/code/ds3_rc.py /path/to/videos/
-
-
 
 Alternatively, if you really don't want to mess with a CLI, place the ds3_rc.py file in the same folder as your videos and double click to run.
 
 See the "Input" section for more detail.
 
 
-
+<br/><br/>
 ## Limitations and Known Bugs
 
 #### Nameplate not caught
@@ -109,14 +104,12 @@ Example:
 
 For this reason, video resolution of at least 720p is strongly recommended. Also, Tesseract version 5.0+.
 
-
 #### Misinterpreted characters in prefix or suffix
 The name extraction consists of three steps. Recognize the prefix phrase, recognize the suffix phrase, extract the leftover name.
 Using the example message "Phantom XXsoandsoXX has been summoned":
 Prefix: Phantom
 Suffix: has been summoned
 Player name: XXsoandsoXX
-
 
 An exact match for both the preffix and the suffix is required. 
 A single misinterpreted character in the prefix / suffix will cause the frame to be discarded.
@@ -126,19 +119,13 @@ Using --loose?? will accept all nameplate text, even without a prefix or suffix 
 If you want to maximise the chances of detecting a player's name and you are not concerned about a somewhat bloated output file, then use this option.
 
 
-
-
-
-
-
-
-
+<br/><br/>
 ## Support
 Please report the following:
 Bugs, errors, problems
 Your PC specs and performance (the last few lines of the program's CLI output)
 Any other questions, requests, suggestions, comments,  etc
-
+<br/><br/>
 
 
 
