@@ -75,12 +75,12 @@ Simply place the executable file in the same folder as your videos and double cl
 
 
 <br/><br/>
-If you are not using one the platforms listed above then you'll have to do it manualy.
+If you are not using one the platforms listed above, then you'll have to do it manually. Follow these steps:
 
 Prerequisites:\
-Python Version 3.6+ [Available here](https://www.python.org/downloads/)
+Install Python Version 3.6+. [Available here](https://www.python.org/downloads/)
 
-Download my Python script
+Download my Python script: /releases/ds3_rc.py
 
 Install the following Python packages:\
 pytesseract
@@ -88,9 +88,9 @@ pytesseract
 Example installation:\
 `pip install pytesseract`
 
-To run the program, invoke the Python script along with the folder(s) containing your videos.\
+To run the program, invoke the Python script from a CLI along with the folder(s) containing your videos.\
 Example:\
-`python /path/to/code/ds3_rc.py /path/to/videos/`
+`python C:\Users\Jugly\Downloads\ds3_rc.py C:\Users\Jugly\Videos\`
 
 
 <br/><br/>
