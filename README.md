@@ -65,12 +65,13 @@ You know you fought this person before, but you don't want to manually look thro
 
 <br/><br/>
 ## Getting Started
-The simpliest way to run this program is use one of the "frozen" executables.\
+The easiest way to run this program is to use one of the "frozen" executables.\
 Windows 10: \
 Windows 11: \
-Ubuntu 19.04 Linux: 
+Linux Ubuntu 19.04: 
 
-These executables will contain the Python interpreter, the Python script, and all the dependencies.
+These executables will contain the Python interpreter, the Python script, and all the dependencies.\
+Simply place the executable file in the same folder as your videos and double click to run it.
 
 
 <br/><br/>
