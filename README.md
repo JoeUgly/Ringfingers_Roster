@@ -90,7 +90,7 @@ This program assumes the entire nameplate animation (the nameplate message fadin
 
 For performance reasons this program does not check every frame. In fact, it checks only one frame per ~1.1 seconds of video. If any part of the nameplate animation is missing from the video, then this program might not capture that player's name.
 <br/><br/>
-#### Long message
+#### Message too long 
 Some messages can be so long that they extend past the edge of the nameplate and therefore not detected.\
 Some messages consist of two lines and therefore the useful text is not in the excpected location and also not detected.
 <br/><br/>
