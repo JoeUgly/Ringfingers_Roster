@@ -52,14 +52,8 @@ args
 * [Limitations](#Limitations)
 * [FAQ](#FAQ)
 * [Support](#Support)
-* [Advanced Usage](#Advanced-Usage)
-* [](#)
-Input
-Output
-OCR
-Performance
-Features
-Optional arguments
+* [Advanced Usage](#blob/main/Advanced_Usage.md)
+
 
 
 
