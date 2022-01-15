@@ -35,19 +35,6 @@ You can merge multiple result files.
 
 
 
-What video formats are allowed?\
-Anything that OpenCV can read. This program uses only very basic error checking in regards to reading a file as a video.
-
-
-How can I skip some files in a folder?\
-Use your CLI's glob / wildcard capabilities.\
-Example using Windows PowerShell:\
-`python C:\Users\jhalb\Downloads\ds3_rc.py $(dir C:\Users\jhalb\Videos\*.mp4)`
-
-Example using Bash:\
-`python3 /home/jhalb/code/ds3_rc.py /home/jhalb/videos/*.mp4`
-
-
 <br/><br/>
 ## Output
 This program outputs the results in JSON / Python dictionary format. The key is the player name and the value is a list of file paths (the names of the videos in which the player's name was found).\
@@ -60,6 +47,14 @@ Example output file:
 }
 ```
 
+To specify the output file location use the `--output` option.\
+Example:
+`python ds3_rc.py /path/to/videos/ --output=/path/to/documents/`
+
+If no location is specified, then the video directory will be used.\
+If no video directory is specified (excplicitly or implicitly), then the directory containing the Python script will be used.
+
+**This program will overwrite the output file without warning.**
 
 <br/><br/>
 ## Features
