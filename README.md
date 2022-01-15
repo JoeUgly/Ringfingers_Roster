@@ -47,7 +47,7 @@ args
 ### Table of Contents
 * [Summary](#Summary)
 * [Getting-Started](Getting Started)
-Description
+* [Description](Description)
 Limitations
 Input
 Output
