@@ -12,9 +12,9 @@
 
 <br/><br/>
 ## Options
---noskip
---nonrecursive
---loose
+--noskip\
+--nonrecursive\
+--loose\
 --output=
 
 
