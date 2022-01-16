@@ -11,7 +11,7 @@
 
 <br/><br/>
 ## Input
-You can supply as arguments any combination of videos and directories.
+You can supply as arguments any combination of filenames and directories.
 
 This program will assume all arguments are either videos or directories containing videos, unless the argument begins with --.
 If no files or directories are given, the program will use the current working directory.
