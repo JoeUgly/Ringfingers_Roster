@@ -11,12 +11,21 @@
 
 <br/><br/>
 ## Input
-You can supply as arguments any combination of filenames and directories.
 
-This program will assume all arguments are either videos or directories containing videos, unless the argument begins with --.
+This program will accept four types of arguments:
+1. Options
+2. Result file used for the [Resumption feature](#Resumption)
+3. A video file
+4. A directory containing videos (and result files)
+
+All options nust begin with "--".\
+All result files must begin with "ds3_rc_results".
+
+You can supply as arguments any combination of filenames, directories, and result files.
+
 If no files or directories are given, the program will use the current working directory.
 
-Directory searches are recursive by default. Disable this with the `--nonrecursive` option.
+Directory searches are recursive by default. Disable this with the `--nonrecursive` option.\
 Only directories given AFTER the --nonrecursive option will be nonrecursive.
 
 Example:
@@ -31,14 +40,14 @@ Alternatively, you can explicitly give the absolute path of the result file as a
 Example:\
 `python ds3_rc.py /path/to/videos/ /path/to/ds3_rc_results.txt`
 
-The filename must begin with "ds3_rc_results".
+The filename must begin with "ds3_rc_results".\
 You can merge multiple result files.
 
 
 
 <br/><br/>
 ## Output
-This program outputs the results in JSON / Python dictionary format. The key is the player name and the value is a list of file paths (the names of the videos in which the player's name was found).\
+This program outputs the results in JSON / Python dictionary format. The key is the player name and the value is a list of file paths (the videos in which the player's name was found).\
 Example output file:
 ```
 {
@@ -63,8 +72,8 @@ If no video directory is specified (excplicitly or implicitly), then the directo
 #### Resumption
 This program saves its progress to a file after each video is processed. This allows for a resumption feature which serves three purposes:
 1. If an error occurs, you don't need to start over from the beginning.
-2. When you add new videos to the directory and run this program again, it will skip videos which have already been processed.
-3. Merge previous results to create a single combined output file.
+2. When you add new videos and run this program again, it will skip videos which have already been processed.
+3. Merge a previous result file to create a single combined result file with the new additions.
 
 To use this resumption feature, supply an result file as an argument when you run the program.\
 This can be done one of two ways:
