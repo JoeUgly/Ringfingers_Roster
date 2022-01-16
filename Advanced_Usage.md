@@ -14,7 +14,7 @@
 
 This program will accept any combination of these four types of arguments:
 1. Options
-2. Result file used for the [Resumption feature](#Resumption)
+2. A Result file used for the [Resumption feature](#Resumption)
 3. A video file
 4. A directory containing videos (and result files)
 
