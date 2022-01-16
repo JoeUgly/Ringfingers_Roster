@@ -102,7 +102,9 @@ Alternatively, if you really don't want to mess with a CLI, place the ds3_rc.py 
 
 #### Nameplate not caught
 This program detects player names **ONLY** when the nameplate appears.
-<nameplate image>
+
+![](https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/blob/main/assets/nameplate.png)
+
 Doesn't work on arena fights.
 
 This program assumes the entire nameplate animation (the nameplate message fading in and out multiple times) is present in the video.
