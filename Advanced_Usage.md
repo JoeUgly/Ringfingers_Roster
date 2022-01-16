@@ -12,16 +12,14 @@
 <br/><br/>
 ## Input
 
-This program will accept four types of arguments:
+This program will accept any combination of these four types of arguments:
 1. Options
 2. Result file used for the [Resumption feature](#Resumption)
 3. A video file
 4. A directory containing videos (and result files)
 
-All options nust begin with "--".\
+All options must begin with "--".\
 All result files must begin with "ds3_rc_results".
-
-You can supply as arguments any combination of filenames, directories, and result files.
 
 If no files or directories are given, the program will use the current working directory.
 
@@ -31,18 +29,6 @@ Only directories given AFTER the --nonrecursive option will be nonrecursive.
 Example:
 `python C:\Users\jhalb\Downloads\ds3_rc.py C:\Users\jhalb\folder_1\ --nonrecursive C:\Users\jhalb\folder_2\`\
 Only folder_1 will be searched recursively.
-
-
-<br/><br/>
-### Merge
-Simply place the result file in the same directory as the videos you are processing.\
-Alternatively, you can explicitly give the absolute path of the result file as an argument.\
-Example:\
-`python ds3_rc.py /path/to/videos/ /path/to/ds3_rc_results.txt`
-
-The filename must begin with "ds3_rc_results".\
-You can merge multiple result files.
-
 
 
 <br/><br/>
@@ -59,7 +45,7 @@ Example output file:
 
 To specify the output file location use the `--output` option.\
 Example:
-`python ds3_rc.py /path/to/videos/ --output=/path/to/documents/`
+`python ds3_rc.py /path/to/videos/ '--output=/path/to/documents/'`
 
 If no location is specified, then the video directory will be used.\
 If no video directory is specified (excplicitly or implicitly), then the directory containing the Python script will be used.
@@ -70,17 +56,20 @@ If no video directory is specified (excplicitly or implicitly), then the directo
 ## Features
 
 #### Resumption
-This program saves its progress to a file after each video is processed. This allows for a resumption feature which serves three purposes:
+This program saves its progress to a file after each video is processed. This allows for a Resumption feature which serves three purposes:
 1. If an error occurs, you don't need to start over from the beginning.
 2. When you add new videos and run this program again, it will skip videos which have already been processed.
-3. Merge a previous result file to create a single combined result file with the new additions.
+3. Merge the previous result file to create a single combined result file with the new additions.
 
-To use this resumption feature, supply an result file as an argument when you run the program.\
-This can be done one of two ways:
-1. Place the result file in one of the directories supplied in the arguments; or
-2. Give the absolute path of the result file as an argument.
+To use this Resumption feature:\
+Place the result file in the same directory as the videos you are processing.\
 
-The results filename must start with "ds3_rc_results".
+Alternatively, you can explicitly give the absolute path of the result file as an argument.\
+Example:\
+`python ds3_rc.py /path/to/videos/ /path/to/ds3_rc_results.txt`
+
+The results filename must begin with "ds3_rc_results".
+You can merge multiple result files.
 
 
 <br/><br/>
