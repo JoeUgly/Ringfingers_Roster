@@ -180,17 +180,15 @@ Any other questions, requests, suggestions, comments,  etc
 
 
 import time
-from datetime import datetime
-from sys import argv, exc_info, getsizeof, exit
-from os import path, access, R_OK, listdir
-from ntpath import basename
-from cv2 import VideoCapture
-from PIL import Image, ImageStat, ImageOps
+import sys
+import os
+import ntpath
+import cv2
+import PIL
 from pytesseract import pytesseract
 import json
 import threading as mt
 import queue
-from os import getcwd
 
 
 
