@@ -9,9 +9,7 @@ todo
 
 email
 discord
-example of nameplate image
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -
-use python to glob? -
 config file?
 optional fuzzy matching for phrases
 move .py into dir then just click (make executable?)
@@ -35,12 +33,7 @@ Quality of results
 Phase 3:
 Performance
 
-args
-	--nonrecursive
-	--strict or --loose phrase/name detection
-	--output for results file
-	--noskip same filenames in diff locations?
-	--multi thread count?
+
 
 
 <br/><br/>
