@@ -78,7 +78,7 @@ Simply place the executable file in the same folder as your videos and double cl
 If you are not using one the platforms listed above, then you'll have to do it manually. Follow these steps:
 
 Prerequisites:\
-Install Python Version 3.6+. [Available here](https://www.python.org/downloads/)
+Install Python Version 3.6+. [Available here](https://www.python.org/downloads/ =250x25)
 
 Download my Python script: /releases/ds3_rc.py
 
