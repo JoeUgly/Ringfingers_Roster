@@ -1,12 +1,22 @@
 # Advanced Usage
 
 ### Table of Contents
+* [Options](#Options)
 * [Input](#Input)
 * [Output](#Output)
 * [Features](#Features)
-* [Optional Arguments](#Optional-Arguments)
 * [Performance](#Performance)
 * [Detailed Description](#Detailed-Description)
+
+
+
+<br/><br/>
+## Options
+--noskip
+--nonrecursive
+--loose
+--output=
+
 
 
 <br/><br/>
