@@ -110,10 +110,14 @@ Doesn't work on arena fights.
 This program assumes the entire nameplate animation (the nameplate message fading in and out multiple times) is present in the video.
 
 For performance reasons this program does not check every frame. In fact, it checks only one frame per ~1.1 seconds of video. If any part of the nameplate animation is missing from the video, then this program might not capture that player's name.
+
+
 <br/><br/>
 #### Message too long 
-Some messages can be so long that they extend past the edge of the nameplate and therefore not detected.\
-Some messages consist of two lines and therefore the useful text is not in the excpected location and also not detected.
+Some messages can be so long that they extend past the edge of the nameplate and therefore are not detected.\
+Some messages consist of two lines and therefore the useful text is not in the excpected location and are also not detected.
+
+
 <br/><br/>
 #### Misinterpreted characters in player name
 Computers are bad at reading text from an image. Therefore, this program will not be 100% accurate.\
@@ -128,6 +132,8 @@ Example:
 ```
 
 For this reason, video resolution of at least 720p is strongly recommended. Also, Tesseract version 5.0+.
+
+
 <br/><br/>
 #### Misinterpreted characters in prefix or suffix
 The name extraction consists of three steps. Recognize the prefix phrase, recognize the suffix phrase, extract the leftover name.\
