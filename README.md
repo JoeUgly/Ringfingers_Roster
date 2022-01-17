@@ -5,17 +5,6 @@
 ## Extract other player's names from your gameplay videos
 
 
-todo
-
-email
-discord
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -
-config file?
-optional fuzzy matching for phrases
-move .py into dir then just click (make executable?)
-if multi dirs output default to cwd or dir of code?
-tally wins vs loses against player? win percent as invader vs ganker?
---lenient for missing either pre or suf, --verylenient for missing both?
 
 
 Phase 1:
@@ -33,6 +22,8 @@ Quality of results
 Phase 3:
 Performance
 
+Phase 4:
+Advanced features
 
 
 
