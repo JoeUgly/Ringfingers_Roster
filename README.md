@@ -78,8 +78,9 @@ Windows: [Available here](https://github.com/UB-Mannheim/tesseract/wiki)
 Linux: [Available here](https://tesseract-ocr.github.io/tessdoc/Home.html#binaries)
 
 I used the following to easily install Tesseract 5.0 on Ubuntu:
-` `
+` `??
 
+<br/><br/>
 To run the program, invoke the Python script from a CLI along with the folder(s) containing your videos.\
 Example:\
 `python C:\Users\Jugly\Downloads\ds3_rc.py C:\Users\Jugly\Videos\`
