@@ -12,10 +12,11 @@
 
 <br/><br/>
 ## Options
---noskip\
---nonrecursive\
---loose\
---output=
+--nonrecursive      Do not search directories recursively.\
+--noskip\           Do not skip files if they have the same filename.\
+--lenient\          Attempt name extraction if a prefix or suffix is missing.\
+--verylenient\      Attempt name extraction if both the prefix and suffix are missing.\
+--output=           Specify the location of the output (result) file.
 
 
 
