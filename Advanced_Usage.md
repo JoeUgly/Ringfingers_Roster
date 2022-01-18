@@ -12,7 +12,7 @@
 
 <br/><br/>
 ## Options
---nonrecursive&nbsp;&nbsp;&nbsp;&nbsp;Do not search directories recursively.\
+--nonrecursive&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Do not search directories recursively.\
 --noskip           Do not skip files if they have the same filename.\
 --lenient          Attempt name extraction if a prefix or suffix is missing.\
 --verylenient      Attempt name extraction if both the prefix and suffix are missing.\
