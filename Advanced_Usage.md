@@ -12,11 +12,11 @@
 
 <br/><br/>
 ## Options
---nonrecursive&emsp;&emsp;Do not search directories recursively.\
+--nonrecursive&emsp;&emsp; Do not search directories recursively.\
 --noskip&emsp;&emsp;&emsp;&emsp;&emsp;Do not skip files if they have the same filename.\
---lenient&emsp;&emsp;&emsp;&emsp;Attempt name extraction if a prefix or suffix is missing.\
+--lenient&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Attempt name extraction if a prefix or suffix is missing.\
 --verylenient&emsp;&emsp;&emsp;&emsp;Attempt name extraction if both the prefix and suffix are missing.\
---output=&emsp;&emsp;&emsp;&emsp;Specify the location of the output (result) file.
+--output=&emsp;&emsp;&emsp;&emsp; Specify the location of the output (result) file.
 
 
 
