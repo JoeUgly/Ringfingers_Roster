@@ -13,7 +13,7 @@
 <br/><br/>
 ## Options
 --nonrecursive&emsp;&emsp;Do not search directories recursively.\
---noskip&emsp;Do not skip files if they have the same filename.\
+--noskip&emsp;&emsp;&emsp;Do not skip files if they have the same filename.\
 --lenient&emsp;&emsp;Attempt name extraction if a prefix or suffix is missing.\
 --verylenient&emsp;&emsp;Attempt name extraction if both the prefix and suffix are missing.\
 --output=&emsp;&emsp;Specify the location of the output (result) file.
