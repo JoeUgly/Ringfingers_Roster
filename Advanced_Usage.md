@@ -37,7 +37,7 @@ If no files or directories are given, the program will use the current working d
 Directory searches are recursive by default. Disable this with the `--nonrecursive` option.\
 Only directories given AFTER the --nonrecursive option will be nonrecursive.
 
-Example:
+Example:\
 `python C:\Users\jhalb\Downloads\ds3_rc.py C:\Users\jhalb\folder_1\ --nonrecursive C:\Users\jhalb\folder_2\`\
 Only folder_1 will be searched recursively.
 
@@ -67,19 +67,19 @@ If no video directory is specified (excplicitly or implicitly), then the directo
 ## Features
 
 #### Resumption
-This program saves its progress to a file after each video is processed. This allows for a Resumption feature which serves three purposes:
-1. If an error occurs, you don't need to start over from the beginning.
-2. When you add new videos and run this program again, it will skip videos which have already been processed.
+This program saves its progress to a file after each video is processed. This allows for a Resumption feature which serves three purposes:\
+1. If an error occurs, you don't need to start over from the beginning.\
+2. When you add new videos and run this program again, it will skip videos which have already been processed.\
 3. Merge the previous result file to create a single combined result file with the new additions.
 
 To use this Resumption feature:\
-Place the result file in the same directory as the videos you are processing.\
+Place the result file in the same directory as the videos you are processing.
 
 Alternatively, you can explicitly give the absolute path of the result file as an argument.\
 Example:\
 `python ds3_rc.py /path/to/videos/ /path/to/ds3_rc_results.txt`
 
-The results filename must begin with "ds3_rc_results".
+The results filename must begin with "ds3_rc_results".\
 You can merge multiple result files.
 
 
@@ -90,13 +90,13 @@ Example (the second video will be skipped):\
 C:\Users\jhalb\Desktop\video_1.mkv\
 C:\Users\jhalb\Videos\DS3\pvp\video_1.mkv	
 
-This is done to allow use of symlinks.
+This is done to allow use of symlinks.\
 To skip videos only when they have the same name and location invoke the `--noskip` option.
 
 
 <br/><br/>
 ## Performance
-Reading and processing video data is slow. It is mostly dependent on your CPU and the video resolution.
+Reading and processing video data is slow. It is mostly dependent on your CPU and the video resolution.\
 I have made every effort to make this program as fast as possible.
 
 
