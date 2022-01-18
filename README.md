@@ -6,6 +6,7 @@
 
 fps check
 lenient and very lenient both invoked
+use quotes in examples
 
 
 Phase 1:
