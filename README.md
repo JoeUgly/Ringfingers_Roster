@@ -54,7 +54,7 @@ You know you fought this person before, but you don't want to manually look thro
 The easiest way to run this program is to use one of the "frozen" executables.\
 Windows 10: \
 Windows 11: \
-Linux Ubuntu 19.04: 
+Linux Ubuntu: 
 
 These executables will contain the Python interpreter, the Python script, and all the dependencies.\
 Simply place the executable file in the same folder as your videos and double click to run it.
@@ -77,7 +77,7 @@ Install Tesseract-OCR (version 5.0+ is strongly reccomemended)
 Windows: [Available here](https://github.com/UB-Mannheim/tesseract/wiki)
 Linux: [Available here](https://tesseract-ocr.github.io/tessdoc/Home.html#binaries)
 
-I used the following to easily install Tesseract 5.0 on Ubuntu:
+I used the following to easily install Tesseract 5.0 on Ubuntu:\
 ` `??
 
 <br/><br/>
