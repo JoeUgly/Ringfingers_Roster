@@ -13,9 +13,9 @@
 <br/><br/>
 ## Options
 --nonrecursive &emsp;&emsp; Do not search directories recursively. [See Input](#Input)\
---noskip &emsp;&emsp;&emsp;&emsp;&emsp;Do not skip files if they have the same filename. [See Skip same filename](#Skip same filename)\
---lenient&emsp;&emsp;&emsp;&emsp;&emsp;Attempt name extraction if a prefix or suffix is missing. [See Readme](#Misinterpreted characters in prefix or suffix)\
---verylenient &emsp;&emsp;&emsp;Attempt name extraction if both the prefix and suffix are missing. See Readme](#Misinterpreted characters in prefix or suffix)\
+--noskip &emsp;&emsp;&emsp;&emsp;&emsp;Do not skip files if they have the same filename. [See Skip same filename](#Skip-duplicates)\
+--lenient&emsp;&emsp;&emsp;&emsp;&emsp;Attempt name extraction if a prefix or suffix is missing. [See Readme](https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/blob/main/README.md#Misinterpreted characters in prefix or suffix)\
+--verylenient &emsp;&emsp;&emsp;Attempt name extraction if both the prefix and suffix are missing. [See Readme](https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/blob/main/README.md#Misinterpreted characters in prefix or suffix)\
 --output=&emsp;&emsp;&emsp;&emsp; Specify the location of the output (result) file. [See Output](#Output)
 
 
@@ -84,14 +84,16 @@ You can merge multiple result files.
 
 
 <br/><br/>
-#### Skip same filename
+#### Skip duplicates
 By default this program will skip videos with the same filename, even if they are in different folders.\
 Example (the second video will be skipped):\
 C:\Users\jhalb\Desktop\video_1.mkv\
 C:\Users\jhalb\Videos\DS3\pvp\video_1.mkv	
 
 This is done to allow use of symlinks.\
+
 To skip videos only when they have the same name and location invoke the `--noskip` option.
+Use this option only when different videos are expected to have the same filename.
 
 
 <br/><br/>
