@@ -40,7 +40,7 @@ Advanced features
 
 <br/><br/>
 ## Summary
-Scans through all your gameplay videos and records the name of each player who enters or leaves the world.\
+Scans through your gameplay videos and records the name of each player who enters or leaves the world.\
 The program outputs a list of player names, along with the name of each video which they were found in.
 
 Use case:\
