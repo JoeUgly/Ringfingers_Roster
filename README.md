@@ -8,6 +8,7 @@ fps check
 lenient and very lenient both invoked
 use quotes in examples
 ask about video organization
+backup docs
 
 
 Phase 1:
