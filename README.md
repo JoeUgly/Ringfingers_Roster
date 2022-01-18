@@ -4,7 +4,8 @@
 
 ## Extract other player's names from your gameplay videos
 
-
+fps check
+lenient and very lenient both invoked
 
 
 Phase 1:
@@ -49,6 +50,7 @@ You know you fought this person before, but you don't want to manually look thro
 
 <br/><br/>
 ## Getting Started
+#### Recommended method
 The easiest way to run this program is to use one of the "frozen" executables.\
 Windows 10: \
 Windows 11: \
@@ -59,18 +61,24 @@ Simply place the executable file in the same folder as your videos and double cl
 
 
 <br/><br/>
+#### Manual method
 If you are not using one the platforms listed above, then you'll have to do it manually. Follow these steps:
 
 Prerequisites:\
-Install Python Version 3.6+. [Available here](https://www.python.org/downloads/)
-
-Download my Python script: /releases/ds3_rc.py
+Install Python version 3.6+. [Available here](https://www.python.org/downloads/)
 
 Install the following Python packages:\
-pytesseract
-
 Example installation:\
-`pip install pytesseract`
+`pip install pytesseract, opencv-python`
+
+Download my Python script located at: /releases/ds3_rc.py
+
+Install Tesseract-OCR (version 5.0+ is strongly reccomemended)
+Windows: [Available here](https://github.com/UB-Mannheim/tesseract/wiki)
+Linux: [Available here](https://tesseract-ocr.github.io/tessdoc/Home.html#binaries)
+
+I used the following to easily install Tessearct on Ubuntu:
+
 
 To run the program, invoke the Python script from a CLI along with the folder(s) containing your videos.\
 Example:\
@@ -126,28 +134,31 @@ Prefix: Phantom\
 Suffix: has been summoned\
 Player name: XXsoandsoXX
 
-An exact match for both the preffix and the suffix is required. \
+An exact match for both the prefix and the suffix is required. \
 A single misinterpreted character in the prefix / suffix will cause the frame (and name) to be discarded.
 
-This behavior can be changed to be more lenient by invoking the `--loose` option.\
-Using `--loose` will accept all nameplate text, even without a prefix or suffix match. This will cause many more entries into the output file, many of which will be false positives.\
-If you want to maximise the chances of detecting a player's name and you are not concerned about a somewhat bloated output file, then use this option.
+This behavior can be changed to be more lenient by invoking the `--lenient` or `--verylenient` options.\
+Using `--lenient` will extract a player name, even if a prefix or suffix is not detected. \
+Using `--verylenient` will extract a player name, even if both the prefix and suffix are not detected.\
+These options will cause increasingly more entries into the output file, many of which will be false positives.\
+If you want to maximise the chances of detecting a player's name and you are not concerned about a somewhat bloated output file, then use these options.
 
 
 <br/><br/>
 ## FAQ
 
 #### What video formats are allowed?
-Anything that OpenCV can read. This program uses only very basic error checking in regards to reading a file as a video.
+Anything that OpenCV can read. This program uses only very basic error checking in regards to reading a file as a video.\
+Unpredictable behavior will occur if you attempt to run this program on non-videos.
 
 	
 <br/><br/>
 #### How can I skip some files in a folder?
 Use your CLI's glob / wildcard capabilities.\
-Example using Windows PowerShell:\
+Example using Windows PowerShell to select only MP4 files:\
 `python C:\Users\jhalb\Downloads\ds3_rc.py $(dir C:\Users\jhalb\Videos\*.mp4)`
 
-Example using Bash:\
+Example using Bash to select only MP4 files:\
 `python3 /home/jhalb/code/ds3_rc.py /home/jhalb/videos/*.mp4`
 
 
@@ -170,19 +181,14 @@ Any other questions, requests, suggestions, comments,  etc
 
 
 
-import time
-import sys
-import os
+
+
 import ntpath
-import cv2
-import PIL
-from pytesseract import pytesseract
-import json
-import threading as mt
-import queue
 
-
-
+use
+pip install opencv-python-headless
+if not using
+cv2.imshow
 
 
 
