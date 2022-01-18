@@ -67,18 +67,18 @@ If you are not using one the platforms listed above, then you'll have to do it m
 Prerequisites:\
 Install Python version 3.6+. [Available here](https://www.python.org/downloads/)
 
-Install the following Python packages:\
+Install the following Python packages: pytesseract, opencv-python, Pillow\
 Example installation:\
-`pip install pytesseract, opencv-python`
+`pip install pytesseract, opencv-python, Pillow`
 
-Download my Python script located at: /releases/ds3_rc.py
+Download my Python script located at: /releases/ds3_rc.py??
 
 Install Tesseract-OCR (version 5.0+ is strongly reccomemended)
 Windows: [Available here](https://github.com/UB-Mannheim/tesseract/wiki)
 Linux: [Available here](https://tesseract-ocr.github.io/tessdoc/Home.html#binaries)
 
-I used the following to easily install Tessearct on Ubuntu:
-
+I used the following to easily install Tesseract 5.0 on Ubuntu:
+` `
 
 To run the program, invoke the Python script from a CLI along with the folder(s) containing your videos.\
 Example:\
