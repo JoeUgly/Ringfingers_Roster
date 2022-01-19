@@ -2,7 +2,7 @@
 
 # ___ UNDER CONSTRUCTION ___
 
-## Extract other player's names from your gameplay videos
+## Extract other player's names from your Dark Souls 3 gameplay videos
 
 fps check
 lenient and very lenient both invoked
