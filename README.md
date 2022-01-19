@@ -65,27 +65,27 @@ Simply place the executable file in the same folder as your videos and double cl
 
 <br/><br/>
 #### Manual method
-If you are not using one the platforms listed above, then you'll have to do it manually. Fulfill these prerequisites:
+If you are not using one of the platforms listed above, then you'll have to do it manually. Fulfill these prerequisites:
 
-Install Python version 3.6+. [Available here](https://www.python.org/downloads/)
+1. Install Python version 3.6+. [Available here](https://www.python.org/downloads/)
 
 Install the following Python packages: pytesseract, opencv-python, Pillow\
-Example installation:\
+Example:\
 `pip install pytesseract, opencv-python, Pillow`
 
-Download my Python script located at: /releases/ds3_rc.py??
-
-Install Tesseract-OCR (version 5.0+ is strongly reccomemended)\
+2. Install Tesseract-OCR (version 5.0+ is strongly reccomemended)\
 Windows: [Available here](https://github.com/UB-Mannheim/tesseract/wiki)\
 Linux: [Available here](https://tesseract-ocr.github.io/tessdoc/Home.html#binaries)
 
 I used the following to easily install Tesseract 5.0 on Ubuntu:\
 ` `??
 
+3. Download the latest RR script located at: /releases/ds3_rc.py??
+
 <br/><br/>
 To run the program, invoke the Python script from a CLI along with the folder(s) containing your videos.\
 Example:\
-`python C:\Users\Jugly\Downloads\ds3_rc.py C:\Users\Jugly\Videos\`
+`python C:\Users\Jugly\Downloads\ds3_rc.py C:\Users\Jugly\Videos\DS3\`
 
 
 <br/><br/>
