@@ -103,8 +103,7 @@ This program detects player names **ONLY** when the nameplate appears.
 Doesn't work on arena fights.
 
 This program assumes the entire nameplate animation (the nameplate message fading in and out multiple times) is present in the video.
-
-For performance reasons this program does not check every frame. In fact, it checks only one frame per ~1.1 seconds of video. If any part of the nameplate animation is missing from the video, then this program might not capture that player's name.
+If any part of the nameplate animation is missing from the video, then this program might not capture that player's name.
 
 
 <br/><br/>
@@ -115,7 +114,7 @@ Some messages consist of two lines and therefore the useful text is not in the e
 
 <br/><br/>
 #### Misinterpreted characters in player name
-Computers are bad at reading text from an image. Therefore, this program will not be 100% accurate.\
+Having a computer read text from an image is inherently error prone.\
 It's common for a player name to appear in the output multiple times with slight errors.\
 Example:
 ```
@@ -126,7 +125,8 @@ Example:
 }
 ```
 
-For this reason, video resolution of at least 720p is strongly recommended. Also, Tesseract version 5.0+.
+A video resolution of 720p is the minimum needed for acceptable quality of results.
+Also, Tesseract version 5.0+ helps significantly.
 
 
 <br/><br/>
@@ -184,7 +184,7 @@ Any other questions, requests, suggestions, comments,  etc
 
 
 
-
+detect when nameplate animation begins. if three detections occur, extract text from only 1? - requires reading more frames
 
 import ntpath
 
