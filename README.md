@@ -53,7 +53,7 @@ You know you fought this person before, but you don't want to manually look thro
 
 <br/><br/>
 ## Getting Started
-#### Recommended method
+### Recommended method
 The easiest way to run this program is to use one of the "frozen" executables.\
 Windows 10: \
 Windows 11: \
@@ -65,9 +65,8 @@ Simply place the executable file in the same folder as your videos and double cl
 
 <br/><br/>
 #### Manual method
-If you are not using one the platforms listed above, then you'll have to do it manually. Follow these steps:
+If you are not using one the platforms listed above, then you'll have to do it manually. Fulfill these prerequisites:
 
-Prerequisites:\
 Install Python version 3.6+. [Available here](https://www.python.org/downloads/)
 
 Install the following Python packages: pytesseract, opencv-python, Pillow\
@@ -76,8 +75,8 @@ Example installation:\
 
 Download my Python script located at: /releases/ds3_rc.py??
 
-Install Tesseract-OCR (version 5.0+ is strongly reccomemended)
-Windows: [Available here](https://github.com/UB-Mannheim/tesseract/wiki)
+Install Tesseract-OCR (version 5.0+ is strongly reccomemended)\
+Windows: [Available here](https://github.com/UB-Mannheim/tesseract/wiki)\
 Linux: [Available here](https://tesseract-ocr.github.io/tessdoc/Home.html#binaries)
 
 I used the following to easily install Tesseract 5.0 on Ubuntu:\
