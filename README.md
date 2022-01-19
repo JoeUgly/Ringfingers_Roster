@@ -186,6 +186,9 @@ Any other questions, requests, suggestions, comments,  etc
 
 detect when nameplate animation begins. if three detections occur, extract text from only 1? - requires reading more frames
 
+add tesseract to Win path?
+https://towardsdatascience.com/simple-ocr-with-tesseract-a4341e4564b6
+
 import ntpath
 
 use
