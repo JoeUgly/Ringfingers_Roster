@@ -109,8 +109,8 @@ For performance reasons this program does not check every frame. In fact, it che
 
 <br/><br/>
 #### Message too long 
-Some messages can be so long that they extend past the edge of the nameplate and therefore are not detected.\
-Some messages consist of two lines and therefore the useful text is not in the excpected location and are also not detected.
+Some messages can be so long that they extend past the edge of the nameplate and therefore not detected.\
+Some messages consist of two lines and therefore the useful text is not in the excpected location and also not detected.
 
 
 <br/><br/>
