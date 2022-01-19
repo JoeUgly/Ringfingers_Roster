@@ -200,6 +200,14 @@ cv2.imshow
 
 
 
+sudo apt-get install tesseract-ocr
+
+--dpi
+dis
+able/ new dict
+https://tesseract-ocr.github.io/tessdoc/tess3/ControlParams.html
+https://github.com/tesseract-ocr/tesseract/blob/main/doc/tesseract.1.asc#config-files-and-augmenting-with-user-data
+
 
 
 
