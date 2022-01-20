@@ -100,10 +100,10 @@ This program detects player names **ONLY** when the nameplate appears.
 
 ![](https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/blob/main/assets/nameplate.png)
 
-Doesn't work on arena fights.
-
-This program assumes the entire nameplate animation (the nameplate message fading in and out multiple times) is present in the video.
+This program assumes the entire nameplate animation (the nameplate message fading in and out multiple times) is present in the video.\
 If any part of the nameplate animation is missing from the video, then this program might not capture that player's name.
+
+Doesn't work on arena fights.
 
 
 <br/><br/>
