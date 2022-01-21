@@ -78,7 +78,10 @@ Windows: [Available here](https://github.com/UB-Mannheim/tesseract/wiki)\
 Linux: [Available here](https://tesseract-ocr.github.io/tessdoc/Home.html#binaries)
 
 I used the following to easily install Tesseract 5.0 on Ubuntu:\
-`sudo apt-get install tesseract-ocr`
+```
+sudo add-apt-repository ppa:alex-p/tesseract-ocr-devel
+sudo apt-get install tesseract-ocr
+```
 
 4\. Download the latest RR script located at: /releases/ds3_rc.py??
 
@@ -184,7 +187,6 @@ Any other questions, requests, suggestions, comments,  etc
 
 
 
-detect when nameplate animation begins. if three detections occur, extract text from only 1? - requires reading more frames
 
 add tesseract to Win path?
 https://towardsdatascience.com/simple-ocr-with-tesseract-a4341e4564b6
@@ -193,18 +195,13 @@ import ntpath
 
 use
 pip install opencv-python-headless
-if not using
-cv2.imshow
-
-
-
+if not using cv2.imshow
 
 
 
 
 --dpi
-dis
-able/ new dict
+disable/ new tess word dict
 https://tesseract-ocr.github.io/tessdoc/tess3/ControlParams.html
 https://github.com/tesseract-ocr/tesseract/blob/main/doc/tesseract.1.asc#config-files-and-augmenting-with-user-data
 
