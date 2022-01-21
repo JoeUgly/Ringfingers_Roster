@@ -78,7 +78,7 @@ Windows: [Available here](https://github.com/UB-Mannheim/tesseract/wiki)\
 Linux: [Available here](https://tesseract-ocr.github.io/tessdoc/Home.html#binaries)
 
 I used the following to easily install Tesseract 5.0 on Ubuntu:\
-` `??
+`sudo apt-get install tesseract-ocr`
 
 4\. Download the latest RR script located at: /releases/ds3_rc.py??
 
@@ -200,7 +200,7 @@ cv2.imshow
 
 
 
-sudo apt-get install tesseract-ocr
+
 
 --dpi
 dis
