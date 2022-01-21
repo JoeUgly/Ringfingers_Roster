@@ -191,19 +191,8 @@ Any other questions, requests, suggestions, comments,  etc
 add tesseract to Win path?
 https://towardsdatascience.com/simple-ocr-with-tesseract-a4341e4564b6
 
-import ntpath
-
-use
-pip install opencv-python-headless
-if not using cv2.imshow
 
 
-
-
---dpi
-disable/ new tess word dict
-https://tesseract-ocr.github.io/tessdoc/tess3/ControlParams.html
-https://github.com/tesseract-ocr/tesseract/blob/main/doc/tesseract.1.asc#config-files-and-augmenting-with-user-data
 
 
 
