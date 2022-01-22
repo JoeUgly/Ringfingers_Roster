@@ -287,8 +287,10 @@ def process_frames_f(frame_queue, name_d):
     thresh = 60  # 40 is sufficent, 60 is safer
     temp_fn = lambda x : 255 if x > thresh else 0
 
-    tessexe = os.path.join(sys._MEIPASS, 'joejoe', 'tesseract.exe')  ## not .exe for linux?
-    pytesseract.tesseract_cmd = tessexe
+    # Path to Tesseract executeable
+    try:
+        tessexe = os.path.join(sys._MEIPASS, 'joejoe', 'tesseract.exe')  ## not .exe for linux?
+        pytesseract.tesseract_cmd = tessexe  ## state in docs to put tess in path
 
     os.environ['OMP_THREAD_LIMIT'] = '1'  # Use only one cpu core for Tesseract
 
