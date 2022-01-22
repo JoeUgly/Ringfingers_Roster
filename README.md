@@ -9,6 +9,7 @@ lenient and very lenient both invoked
 use quotes in examples
 ask about video organization
 backup docs
+strip text first
 
 
 Phase 1:
