@@ -77,9 +77,9 @@ If you are not using one of the platforms listed above, then you'll have to do i
 
 1\. Install Python version 3.6+. [Available here](https://www.python.org/downloads/)
 
-2\. Install the following Python packages: pytesseract, opencv-python, Pillow\
+2\. Install the following Python packages: pytesseract, opencv-python, Pillow, numpy\
 Example:\
-`pip install pytesseract, opencv-python, Pillow, numpy`
+`pip install pytesseract, opencv-python-headless, Pillow, numpy`
 
 3\. Install Tesseract-OCR (version 5.0+ is strongly reccomemended)\
 Windows: [Available here](https://github.com/UB-Mannheim/tesseract/wiki)\
