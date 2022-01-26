@@ -165,7 +165,7 @@ Player name: XXsoandsoXX
 An exact match for both the prefix and the suffix is required. \
 A single misinterpreted character in the prefix / suffix will cause the frame (and name) to be discarded.
 
-This behavior can be changed to be more lenient by invoking the `--lenient` or `--verylenient` options.\
+This behavior can be changed to be more forgiving by invoking the `--lenient` or `--verylenient` options.\
 Using `--lenient` will extract a player name, even if a prefix or suffix is not detected. \
 Using `--verylenient` will extract a player name, even if both the prefix and suffix are not detected.\
 These options will cause increasingly more entries into the output file, many of which will be false positives.\
