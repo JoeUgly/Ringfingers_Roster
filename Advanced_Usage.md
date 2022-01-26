@@ -6,7 +6,7 @@
 * [Output](#Output)
 * [Features](#Features)
 * [Performance](#Performance)
-* [Detailed Description](#Detailed-Description)
+* [Hpw it works](#How-it-works)
 
 
 
