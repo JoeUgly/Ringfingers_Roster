@@ -45,7 +45,7 @@ Only folder_1 will be searched recursively.
 <br/><br/>
 ## Output
 This program outputs the results in JSON / Python dictionary format. The key is the player name and the value is a list of file paths (the videos in which the player's name was found).\
-Example output file:
+Example result (output) file:
 ```
 {
 "Motion_1": ["/path/to/video1.mkv"],
@@ -54,6 +54,8 @@ Example output file:
 }
 ```
 
+
+<br/><br/>
 To specify the output file location use the `--output` option.\
 Example:\
 `python ds3_rc.py /path/to/videos/ '--output=/path/to/documents/'`
