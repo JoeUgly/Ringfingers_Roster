@@ -191,6 +191,10 @@ Example using Bash to select only MP4 files:\
 `python3 /home/jhalb/code/ds3_rc.py /home/jhalb/videos/*.mp4`
 
 
+<br/><br/>
+#### Why is it so slow?
+See the [Performance section](https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/blob/main/Advanced_Usage.md#Performance)
+
 
 <br/><br/>
 ## Support
