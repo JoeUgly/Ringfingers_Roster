@@ -1,7 +1,7 @@
 # Advanced Usage
 
 ### Table of Contents
-* [Manual installation method](Manual-installation-method)
+* [Manual installation method](#Manual-installation-method)
 * [Options](#Options)
 * [Input](#Input)
 * [Output](#Output)
