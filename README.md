@@ -197,6 +197,11 @@ See the [Performance section](https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/
 
 
 <br/><br/>
+#### other questions
+Check out the [Advanced Usage document](https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/blob/main/Advanced_Usage.md)\
+or [pen a issue](https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/issues)
+
+<br/><br/>
 ## How can I help?
 Please report the following:\
 Bugs, errors, problems\
