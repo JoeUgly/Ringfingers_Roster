@@ -85,7 +85,7 @@ Running from a CLI may be mandatory on some systems (Linux).
 
 <br/><br/>
 #### Manual method
-If you are not using one of the platforms listed above, then you'll need to fullfill the prerequisites manually.
+If you are not using one of the platforms listed above, then you'll need to fullfill the prerequisites manually.\
 See the [Manual installation method](https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/edit/main/Advanced_Usage.md#Manual-installation-method) section of the Advanced Usage document.
 
 <br/><br/>
