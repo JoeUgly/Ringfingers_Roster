@@ -29,8 +29,8 @@ This program will accept any combination of these four types of arguments:
 3. A video file
 4. A directory containing videos (and result files)
 
-All options must begin with "--".\
-All result files must begin with "ds3_rc_results".
+All options must begin with `--`.\
+All result files must begin with `ds3_rc_results`.
 
 If no files or directories are given, the program will use the current working directory.
 
