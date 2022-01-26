@@ -283,16 +283,36 @@ def get_frames_f(frame_queue, all_files_l):
 def process_frames_f(frame_queue, name_d):
     prev_video_path = None
     
+    # Path to Tesseract executeable
+    try:
+        print('Trying Windows Tesseract ...')
+        tessexe = os.path.join(sys._MEIPASS, 'joejoe', 'tesseract.exe')
+        pytesseract.tesseract_cmd = tessexe
+    except Exception as errex:
+        try:
+            print('Trying Linux Tesseract ...')
+            tessexe = os.path.join(sys._MEIPASS, 'joejoe', 'tesseract')
+            pytesseract.tesseract_cmd = tessexe
+        except Exception as errex:
+            print('Tesseract not found in frozen temp dir')
+            # tessexe = os.path.join()  # Place path to Tesseract here ...
+            # pytesseract.tesseract_cmd = tessexe  # ... and uncomment this
+
+    try:
+        pytesseract.get_tesseract_version()
+        print('Tesseract is working')
+    except Exception as errex:
+        print('Tesseract can not be found')
+        sys.exit()
+
+
+    os.environ['OMP_THREAD_LIMIT'] = '1'  # Use only one cpu core for Tesseract
+
+
     # Threshold for converting pixel to black or white
     thresh = 60  # 40 is sufficent, 60 is safer
     temp_fn = lambda x : 255 if x > thresh else 0
 
-    # Path to Tesseract executeable
-    try:
-        tessexe = os.path.join(sys._MEIPASS, 'joejoe', 'tesseract.exe')  ## not .exe for linux?
-        pytesseract.tesseract_cmd = tessexe  ## state in docs to put tess in path
-
-    os.environ['OMP_THREAD_LIMIT'] = '1'  # Use only one cpu core for Tesseract
 
     while True:
 
@@ -450,14 +470,11 @@ if __name__ == '__main__':
 
 
     # Get user-supplied option values
-    if len(sys.argv) > 1:
-        arg_d = get_files_f(sys.argv[1:], arg_d)
-        # If no files, default to all files and dirs in current dir
-        if not all_files_l:
-            arg_d = get_files_f([os.getcwd()], arg_d)
-    else:
-        arg_d = get_files_f([os.getcwd()], arg_d)
+    arg_d = get_files_f(sys.argv[1:], arg_d)
 
+    # If no files, default to all files and dirs in current dir
+    if not all_files_l:
+        arg_d = get_files_f([os.getcwd()], arg_d)
 
 
     checked_files_l = []  # Used only by get_frames_f to not start working on same video
