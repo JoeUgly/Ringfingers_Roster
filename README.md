@@ -150,7 +150,7 @@ Example:
 }
 ```
 
-A video resolution of 720p is the minimum needed for acceptable quality of results.
+A video resolution of 720p is the minimum needed for acceptable quality of results. 1080p is better.\
 Also, Tesseract version 5.0+ helps significantly.
 
 
