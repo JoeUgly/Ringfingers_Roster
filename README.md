@@ -176,8 +176,9 @@ If you want to maximise the chances of detecting a player's name and you are not
 ## FAQ
 
 #### What video formats are allowed?
-Anything that OpenCV can read. This program uses only very basic error checking in regards to reading a file as a video.\
-Unpredictable behavior will occur if you attempt to run this program on non-videos.
+Anything that OpenCV can read.
+
+Any file which does not begin with `ds3_rr_results` will be assumed to be a video. This program should identify errors related to trying to read a non-video file and skip to the next file.
 
 	
 <br/><br/>
