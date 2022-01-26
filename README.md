@@ -47,7 +47,7 @@ Advanced features
 * [Getting Started](#Getting-Started)
 * [Limitations](#Limitations)
 * [FAQ](#FAQ)
-* [How can I help?](#How-can-I-help?)
+* [How can I help?](#How-can-I-help)
 * [Advanced Usage](/Advanced_Usage.md)
 
 
