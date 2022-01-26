@@ -121,13 +121,13 @@ A future version may include an option to set the number of threads this program
 
 <br/><br/>
 I have made every effort to make this program as performant as possible. Including:\
-Multithreading using a queue for the frames,\
-Reading the fewest number of frames needed to sample an opaque nameplate,\
-Using the index operator to discard color data prior to var assignment,\
-Cropping the Numpy array prior to converting to an image,\
-Checking for nameplate presence prior to OCR,\
-Single thread Tesseract (10x faster OCR on 1080p),\
-Skipping duplicate files
+ Multithreading using a queue for the frames,\
+ Reading the fewest number of frames needed to sample an opaque nameplate,\
+ Using the index operator to discard color data prior to var assignment,\
+ Cropping the Numpy array prior to converting to an image,\
+ Checking for nameplate presence prior to OCR,\
+ Single thread Tesseract (10x faster OCR on 1080p),\
+ Skipping duplicate files
 
 If you have any suggestions, please let me know.
  
