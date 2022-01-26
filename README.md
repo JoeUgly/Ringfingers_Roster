@@ -47,7 +47,7 @@ Advanced features
 * [Getting Started](#Getting-Started)
 * [Limitations](#Limitations)
 * [FAQ](#FAQ)
-* [Support](#Support)
+* [How can I help?](#How-can-I-help?)
 * [Advanced Usage](/Advanced_Usage.md)
 
 
@@ -193,11 +193,11 @@ Example using Bash to select only MP4 files:\
 
 <br/><br/>
 #### Why is it so slow?
-See the [Performance section](https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/blob/main/Advanced_Usage.md#Performance)
+See the [Performance section](https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/blob/main/Advanced_Usage.md#Performance) in the Advanced Usage document.
 
 
 <br/><br/>
-## Support
+## How can I help?
 Please report the following:\
 Bugs, errors, problems\
 Your PC specs and performance (the last few lines of the program's CLI output)\
