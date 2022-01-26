@@ -1,6 +1,7 @@
 # Advanced Usage
 
 ### Table of Contents
+* [Manual installation method](Manual-installation-method)
 * [Options](#Options)
 * [Input](#Input)
 * [Output](#Output)
@@ -10,8 +11,8 @@
 
 
 
-
-
+<br/><br/>
+## Manual installation method
 1\. Install Python version 3.6+. [Available here](https://www.python.org/downloads/)
 
 2\. Install the following Python packages: pytesseract, opencv-python, Pillow, numpy\
@@ -40,6 +41,7 @@ To run the program, invoke the Python script from a CLI along with the folder(s)
 Example:\
 `python C:\Users\Jugly\Downloads\ds3_rc.py C:\Users\Jugly\Videos\DS3\`
 
+If no video folder is given, then it defaults to the folder containing the RR script.
 
 
 <br/><br/>
