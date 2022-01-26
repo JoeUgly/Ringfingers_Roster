@@ -69,9 +69,17 @@ Windows 10: \
 Windows 11: \
 Linux Ubuntu: 
 
-These executables will contain the Python interpreter, the Python script, and all the dependencies.\
+These executables will contain the Python interpreter, the Python script, and all the dependencies.
+
 Simply place the executable file in the same folder as your videos and double click to run it.
 
+
+<br/><br/>
+Alternatively, you can run the executable file from a CLI.\
+Example:
+`C:\Users\jugly\Desktop\DS3Videos\rr.exe`
+
+Running from a CLI may be mandatory on some systems (Linux).
 
 <br/><br/>
 #### Manual method
