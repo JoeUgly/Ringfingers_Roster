@@ -11,6 +11,7 @@ ask about video organization
 strip text first
 tess path
 exclude all .exe files? only rr file? sys.argv[0]
+remind to mark run as executable
 
 checksums
 Get-FileHash input
