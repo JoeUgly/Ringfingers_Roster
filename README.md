@@ -76,14 +76,16 @@ Simply place the executable file in the same folder as your videos and double cl
 
 <br/><br/>
 Alternatively, you can run the executable file from a CLI.\
-Example:
-`C:\Users\jugly\Desktop\DS3Videos\rr.exe`
+Example:\
+`C:\Users\jugly\Desktop\Downloads\rr.exe C:\Users\jugly\Desktop\DS3Videos\`
+
+If no video folder is given, then it defaults to the folder containing the executable file.
 
 Running from a CLI may be mandatory on some systems (Linux).
 
 <br/><br/>
 #### Manual method
-If you are not using one of the platforms listed above, then you'll have to do it manually. Fulfill these prerequisites:
+If you are not using one of the platforms listed above, then you'll need to install it manually. Fulfill these prerequisites:
 
 1\. Install Python version 3.6+. [Available here](https://www.python.org/downloads/)
 
@@ -103,14 +105,16 @@ sudo apt-get install tesseract-ocr
 
 4\. Download the latest RR script located at: /releases/ds3_rc.py??
 
+5\. Add the tesseract executable ##(dir?) to your PATH or state it in the rr python script
+
+
+
+
 <br/><br/>
 To run the program, invoke the Python script from a CLI along with the folder(s) containing your videos.\
 Example:\
 `python C:\Users\Jugly\Downloads\ds3_rc.py C:\Users\Jugly\Videos\DS3\`
 
-
-<br/><br/>
-Alternatively, if you really don't want to mess with a CLI, place the ds3_rc.py file in the same folder as your videos and double click to run.
 
 
 <br/><br/>
