@@ -55,7 +55,7 @@ Example output file:
 ```
 
 To specify the output file location use the `--output` option.\
-Example:
+Example:\
 `python ds3_rc.py /path/to/videos/ '--output=/path/to/documents/'`
 
 If no location is specified, then the video directory will be used.\
