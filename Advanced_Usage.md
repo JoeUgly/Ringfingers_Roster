@@ -104,6 +104,8 @@ Videos consist of a lot of data, so processing this data is going to be slow.\
 The speed at which this occurs is mostly dependent on your CPU and the video resolution.\
 Surprisingly, the biggest bottleneck in this program is opening and reading a frame. On my Ryzen 2200G, just reading the frame data is much slower than playback speed. I suspect this is due to a lack of hardware acceleration.
 
+
+<br/><br/>
 To speed up this process:\
 Move half of your videos to a different directory. Run an instance of this program on each directory.\
 Example:\
@@ -116,14 +118,18 @@ You can increase the number of directories and instances until your CPU usage is
 
 A future version may include an option to set the number of threads this program uses.
 
- I have made every effort to make this program as performant as possible. Including:\
- Multithreading using a queue for the frames,\
- Reading the fewest number of frames needed to sample an opaque nameplate,\
- Using the index operator to discard color data prior to var assignment,\
- Cropping the Numpy array prior to converting to an image,\
- Checking for nameplate presence prior to OCR,\
- Single thread Tesseract (10x improvement on 1080p),\
- Skipping duplicate files
+
+<br/><br/>
+I have made every effort to make this program as performant as possible. Including:\
+Multithreading using a queue for the frames,\
+Reading the fewest number of frames needed to sample an opaque nameplate,\
+Using the index operator to discard color data prior to var assignment,\
+Cropping the Numpy array prior to converting to an image,\
+Checking for nameplate presence prior to OCR,\
+Single thread Tesseract (10x faster OCR on 1080p),\
+Skipping duplicate files
+
+If you have any suggestions, please let me know.
  
 
 <br/><br/>
