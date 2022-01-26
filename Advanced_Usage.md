@@ -92,7 +92,7 @@ Example (the second video will be skipped):\
 C:\Users\jhalb\Desktop\video_1.mkv\
 C:\Users\jhalb\Videos\DS3\pvp\video_1.mkv	
 
-This is done to allow use of symlinks.\
+This is done to allow use of symlinks.
 
 To skip videos only when they have the same name and location invoke the `--noskip` option.
 Use this option only when different videos are expected to have the same filename.
