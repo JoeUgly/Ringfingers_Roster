@@ -46,7 +46,8 @@ If no video folder is given, then it defaults to the folder containing the RR sc
 
 <br/><br/>
 ## Options
---nonrecursive &emsp;&emsp; Do not search directories recursively. [See Input](#Input)\
+The following can be given as arguemnts.\
+`--nonrecursive` &emsp;&emsp; Do not search directories recursively. [See Input](#Input)\
 --noskip &emsp;&emsp;&emsp;&emsp;&emsp;Do not skip files if they have the same filename. [See Skip duplicates](#Skip-duplicates)\
 --lenient&emsp;&emsp;&emsp;&emsp;&emsp;Attempt name extraction if a prefix or suffix is missing. [See Readme](https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/blob/main/README.md#Misinterpreted-characters-in-prefix-or-suffix)\
 --verylenient &emsp;&emsp;&emsp;Attempt name extraction if both the prefix and suffix are missing. [See Readme](https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/blob/main/README.md#Misinterpreted-characters-in-prefix-or-suffix)\
@@ -92,7 +93,7 @@ Example result (output) file:
 <br/><br/>
 To specify the output file location use the `--output` option.\
 Example:\
-`python ds3_rc.py /path/to/videos/ '--output=/path/to/documents/'`
+`python ds3_rc.py /path/to/videos/ --output=/path/to/documents/`
 
 If no location is specified, then the video directory will be used.\
 If no video directory is specified (excplicitly or implicitly), then the directory containing the Python script will be used.
