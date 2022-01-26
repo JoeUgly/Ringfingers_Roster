@@ -85,37 +85,8 @@ Running from a CLI may be mandatory on some systems (Linux).
 
 <br/><br/>
 #### Manual method
-If you are not using one of the platforms listed above, then you'll need to install it manually. Fulfill these prerequisites:
-
-1\. Install Python version 3.6+. [Available here](https://www.python.org/downloads/)
-
-2\. Install the following Python packages: pytesseract, opencv-python, Pillow, numpy\
-Example:\
-`pip install pytesseract, opencv-python-headless, Pillow, numpy`
-
-3\. Install Tesseract-OCR (version 5.0+ is strongly reccomemended)\
-Windows: [Available here](https://github.com/UB-Mannheim/tesseract/wiki)\
-Linux: [Available here](https://tesseract-ocr.github.io/tessdoc/Home.html#binaries)
-
-I used the following to easily install Tesseract 5.0 on Ubuntu:\
-```
-sudo add-apt-repository ppa:alex-p/tesseract-ocr-devel
-sudo apt-get install tesseract-ocr
-```
-
-4\. Download the latest RR script located at: /releases/ds3_rc.py??
-
-5\. Add the tesseract executable ##(dir?) to your PATH or state it in the rr python script
-
-
-
-
-<br/><br/>
-To run the program, invoke the Python script from a CLI along with the folder(s) containing your videos.\
-Example:\
-`python C:\Users\Jugly\Downloads\ds3_rc.py C:\Users\Jugly\Videos\DS3\`
-
-
+If you are not using one of the platforms listed above, then you'll need to fullfill the prerequisites manually.
+See the Advanced Usage document.
 
 <br/><br/>
 ## Limitations and Known Bugs
@@ -145,13 +116,12 @@ Example:
 ```
 {
 "Player_1": ["/path/to/video1.mkv"],
-"PIayer__!": ["/path/to/video1.mkv"],
+"PIayer_!": ["/path/to/video1.mkv"],
 ...
 }
 ```
 
-A video resolution of 720p is the minimum needed for acceptable quality of results. 1080p is better.\
-Also, Tesseract version 5.0+ helps significantly.
+A video resolution of 720p is the minimum needed for acceptable quality of results. 1080p is much better.
 
 
 <br/><br/>
