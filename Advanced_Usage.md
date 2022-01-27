@@ -191,7 +191,7 @@ This program is expected to work on Ubuntu 20.04 and newer. Similar distros shou
 
 <br/><br/>
 ### compression error checksum
-Compare the values in the checksum file to make sure your file is not corrupted. Checksum files are included in each release.
+Compare the values in the checksum file to make sure your file is not corrupted. A checksum file is included in each release.
 
 Example using Powershell:\
 `Get-FileHash rr.exe`\
