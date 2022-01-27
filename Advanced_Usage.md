@@ -179,7 +179,7 @@ If you have any suggestions, please let me know.
 
 ### Whitespace in file path
 If there is a space character in your filename or path, then surround it with quotes.\
-Example:
+Example:\
 `.\rr.exe DS3Videos\ --outout="C:\Users\name with spaces\Desktop"`
 
 
@@ -193,7 +193,7 @@ Compare the values in the checksum file to make sure your file is not corrupted.
 Example using Powershell:\
 `Get-FileHash rr.exe`\
 Example using CMD:\
-`certutil -hashfile rr.exe sha256`
+`certutil -hashfile rr.exe sha256`\
 Example using Bash:\
 `SHA256sum rr.exe`
 
