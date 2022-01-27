@@ -137,11 +137,11 @@ Use this option only when different videos are expected to have the same filenam
 <br/><br/>
 ## Performance
 #### Startup
-Additionally, the startup process of the frozen executable may take several seconds.\
-This is because the contents of the file must be written to disk as a temporary directory and then read.
+The startup process of the frozen executable may take several seconds.\
+This is because the contents of the file must be written to disk as a temporary directory and then read. I may switch from Pyinstaller to Pyoxidizer to speed this up.
 
 #### Processing
-Videos consist of a lot of data, so processing this data is going to be slow.\
+Videos consist of a lot of data, so processing it will be somewhat slow.\
 The speed at which this occurs is mostly dependent on your CPU and the video resolution.\
 Surprisingly, the biggest bottleneck in this program is opening and reading a frame. On my Ryzen 2200G, just reading the frame data is much slower than playback speed. I suspect this is due to a lack of hardware acceleration.
 
