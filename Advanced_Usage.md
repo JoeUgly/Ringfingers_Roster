@@ -171,7 +171,33 @@ I have made every effort to make this program as performant as possible. Includi
 * Skipping duplicate files
 
 If you have any suggestions, please let me know.
- 
+
+
+
+<br/><br/>
+## Tips and troubleshooting
+
+### Whitespace in file path
+If there is a space character in your filename or path, then surround it with quotes.\
+Example:
+`.\rr.exe DS3Videos\ --outout="C:\Users\name with spaces\Desktop"`
+
+
+### old glibc linux error
+This program is expected to work on Ubuntu 20.04 and newer. Similar distros should work, but have not been tested.
+
+
+### compression error checksum
+Compare the values in the checksum file to make sure your file is not corrupted. Checksum files are included in each release.
+
+Example using Powershell:\
+`Get-FileHash rr.exe`\
+Example using CMD:\
+`certutil -hashfile rr.exe sha256`
+Example using Bash:\
+`SHA256sum rr.exe`
+
+
 
 <br/><br/>
 ## How it works
