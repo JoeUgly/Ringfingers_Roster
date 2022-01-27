@@ -80,7 +80,8 @@ Only folder_1 will be searched recursively.
 
 <br/><br/>
 ## Output
-This program outputs the results in JSON / Python dictionary format. The key is the player name and the value is a list of file paths (the videos in which the player's name was found).\
+This program outputs the results in JSON / Python dictionary format. The key is the player name and the value is a list of file paths (the videos in which the player's name was found).
+
 Example result (output) file:
 ```
 {
@@ -97,7 +98,7 @@ Example:\
 `python ds3_rc.py /path/to/videos/ --output=/path/to/documents/`
 
 If no location is specified, then the video directory will be used.\
-If no video directory is specified (excplicitly or implicitly), then the directory containing the Python script will be used.
+If no video directory is specified, then the directory containing the Python script will be used for input and output.
 
 **This program will overwrite the output file without warning.**
 
