@@ -12,6 +12,10 @@ strip text first
 tess path
 exclude all .exe files? only rr file? sys.argv[0]
 remind to mark run as executable
+single char args
+things to test before starting:
+tesseract
+write and read to file
 
 
 
