@@ -184,10 +184,12 @@ Example:\
 `.\rr.exe DS3Videos\ --outout="C:\Users\name with spaces\Desktop"`
 
 
+<br/><br/>
 ### old glibc linux error
 This program is expected to work on Ubuntu 20.04 and newer. Similar distros should work, but have not been tested.
 
 
+<br/><br/>
 ### compression error checksum
 Compare the values in the checksum file to make sure your file is not corrupted. Checksum files are included in each release.
 
