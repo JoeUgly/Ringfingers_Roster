@@ -138,6 +138,9 @@ A single misinterpreted character in the prefix / suffix will cause the frame (a
 This behavior can be changed to be more forgiving by invoking the `--lenient` or `--verylenient` options.\
 Using `--lenient` will extract a player name, even if a prefix or suffix is not detected. \
 Using `--verylenient` will extract a player name, even if both the prefix and suffix are not detected.\
+Example:\
+`C:\Users\jugly\Desktop\Downloads\rr.exe --lenient C:\Users\jugly\Desktop\DS3Videos\`
+
 These options will cause increasingly more entries into the output file, many of which will be false positives.\
 If you want to maximise the chances of detecting a player's name and you are not concerned about a somewhat bloated output file, then use these options.
 
@@ -171,33 +174,16 @@ See the [Performance section](https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/
 Check out the [Advanced Usage document](https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/blob/main/Advanced_Usage.md)\
 or [open an issue](https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/issues)
 
+
 <br/><br/>
 ## How can I help?
 Please report the following:\
-Bugs, errors, problems\
+Bugs, errors, problems by (starting an issue)[https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/issues]\
 Your PC specs and performance (the last few lines of the program's CLI output)\
 Any other questions, requests, suggestions, comments,  etc
 
 
 <br/><br/>
-
-
-
-
-
-
-
-
-
-
-add tesseract to Win path?
-https://towardsdatascience.com/simple-ocr-with-tesseract-a4341e4564b6
-
-
-
-
-
-
 
 
 
