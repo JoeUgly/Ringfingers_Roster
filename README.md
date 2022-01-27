@@ -173,9 +173,9 @@ or [open an issue](https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/issues)
 <br/><br/>
 ## How can I help?
 Please report the following:\
-Bugs, errors, problems by (starting an issue)[https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/issues]\
-Your PC specs and performance (the last few lines of the program's CLI output)\
-Any other questions, requests, suggestions, comments,  etc
+Bugs, errors, problems by [starting an issue](https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/issues)\
+Your PC specs and performance (the last few lines of the program's CLI output). [Post here](https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/discussions/3)\
+Any other questions, requests, suggestions, comments, etc
 
 
 <br/><br/>
