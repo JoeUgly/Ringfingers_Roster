@@ -200,6 +200,8 @@ Example using CMD:\
 Example using Bash:\
 `SHA256sum rr.exe`
 
+### linux mark as exe
+
 
 
 <br/><br/>
