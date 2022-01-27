@@ -7,7 +7,7 @@
 * [Output](#Output)
 * [Features](#Features)
 * [Performance](#Performance)
-* [Tips and troubleshooting](Tips-and-troubleshooting)
+* [Tips and troubleshooting](#Tips-and-troubleshooting)
 * [How it works](#How-it-works)
 
 
