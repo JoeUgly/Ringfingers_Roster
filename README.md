@@ -13,12 +13,7 @@ tess path
 exclude all .exe files? only rr file? sys.argv[0]
 remind to mark run as executable
 
-checksums
-Get-FileHash input
-certutil -hashfile input sha256
-SHA256sum -c myfiles.md5
-generate:
-SHA256sum groups_list.txt  groups.csv > myfiles.SHA256sum
+
 
 
 Phase 1:
