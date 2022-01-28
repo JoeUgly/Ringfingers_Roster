@@ -30,7 +30,7 @@ time_crop1_l = []
 
 
 # Phrases to remove from player names
-prefix_l = ['Phantom', 'Blue spirit', 'Blade of the Darkmoon', 'Dark spirit', 'Mad dark spirit', 'Aldrich Faithful', 'Loyal spirit, Aldrich Faithful', 'Watchdog of Farron', 'Loyal spirit, Watchdog of Farron', 'Invaded the world of', 'Invaded by dark spirit', 'Task completed.\n']
+prefix_l = ['Phantom', 'Blue spirit', 'Blade of the Darkmoon', 'Dark spirit', 'Mad dark spirit', 'Aldrich Faithful', 'Loyal spirit, Aldrich Faithful', 'Watchdog of Farron', 'Loyal spirit, Watchdog of Farron', 'Invaded the world of', 'Invaded by dark spirit', 'Task completed.']
 suffix_l = ['summoned', 'has died', 'has returned home', 'summoned through concord!', 'invaded', ', disturber of sleep', 'has returned to their world']
 
 
@@ -88,6 +88,64 @@ def get_files_f(arg_l, arg_d):
 
 
 
+# Make sure Tesseract is working
+def check_tess_f():
+
+    # Running as frozen executable
+    if hasattr(sys, '_MEIPASS'):
+        print('Running as frozen executable')
+        tess_dir = os.path.join(sys._MEIPASS, 'tess')  # Custom dir created when freezing executables
+
+        # Path to Tesseract executable
+        if 'tesseract.exe' in os.listdir(tess_dir):
+            print('Trying Windows Tesseract ...')
+            pytesseract.tesseract_cmd = os.path.join(tess_dir, 'tesseract.exe')
+        elif 'tesseract' in os.listdir(tess_dir):
+            print('Trying Linux Tesseract ...')
+            os.environ['TESSDATA_PREFIX'] = tess_dir  # Needed to detect shared objects
+            pytesseract.tesseract_cmd = os.path.join(tess_dir, 'tesseract')
+        else:
+            print('Tesseract executable cannot be found. Exiting ...')
+            return False
+
+    # Tesseract executable must be on PATH or stated explicitly
+    else:
+        print('Running as a script')
+        # Uncomment next line and replace with your location of the Tesseract executable
+        pytesseract.tesseract_cmd = r"C:\Users\jschiffler\AppData\Local\Programs\Tesseract-OCR\tesseract.exe"
+
+    # Check if Tesseract is working
+    try:
+        pytesseract.get_tesseract_version()
+        print('Tesseract is working')
+        os.environ['OMP_THREAD_LIMIT'] = '1'  # Use only one cpu core for Tesseract
+        return True
+    except Exception as errex:
+        print('pytesseract:', errex)
+        print('\n Tesseract is not working. If you are running as a script make sure the Tesseract executable is on the PATH or explicitly stated in the RR python script.')
+        print('Check the Advanced Usage document on Github for more info.')
+        return False
+
+
+# Make sure write to file is working
+def check_write_f():
+    test_loc = os.path.join(arg_d['output_loc'], 'rr_test_filename')
+    with open(test_loc, 'w', errors='replace') as output_file:
+        output_file.write('TEST_TEXT')
+
+    with open(test_loc, 'r') as output_file:
+        content = output_file.read()
+    
+    if content == 'TEST_TEXT':
+        os.remove(test_loc) 
+        return True
+    else:
+        print('Can not read/write at output file location. Check the path and permissions.')
+        print('Output file location:', arg_d['output_loc'])
+        return False
+
+
+
 # Extract player names from text
 def clean_names_f(text):
     name = text  # This is needed for lenient matching
@@ -123,7 +181,7 @@ def clean_names_f(text):
         else:
             print('No suffix detected:', text)
             if lenient_val:
-                return name  # Return name if 
+                return name  # Return name if lenient val > 0
             else:
                 return None
 
@@ -179,11 +237,9 @@ def get_frames_f(frame_queue, all_files_l):
                 checked_files_l.append(video_name)
 
 
+            # Read video
             print('\n Starting video:', video_path)
             vid_frame_count = 0
-
-
-            # Read video
             try:
                 time_vcap = time.time()
                 vcap = cv2.VideoCapture(video_path)
@@ -231,7 +287,7 @@ def get_frames_f(frame_queue, all_files_l):
 
                 # Check if queue is full
                 while frame_queue.full():
-                    print('qfull:', frame_queue.qsize())
+                    print('queue full:', frame_queue.qsize())
                     time.sleep(1)
 
 
@@ -283,35 +339,9 @@ def get_frames_f(frame_queue, all_files_l):
 def process_frames_f(frame_queue, name_d):
     prev_video_path = None
     
-    # Path to Tesseract executeable
-    try:
-        os.environ['TESSDATA_PREFIX'] = os.path.join(sys._MEIPASS, 'tess')
-        print('Trying Windows Tesseract ...')
-        tessexe = os.path.join(sys._MEIPASS, 'tess', 'tesseract.exe')
-        pytesseract.tesseract_cmd = tessexe
-    except Exception as errex:
-        try:
-            print('Trying Linux Tesseract ...')
-            tessexe = os.path.join(sys._MEIPASS, 'tess', 'tesseract')
-            pytesseract.tesseract_cmd = tessexe
-        except Exception as errex:
-            print('Tesseract not found in frozen temp dir')
-            # tessexe = os.path.join()  # Place path to Tesseract here ...
-            # pytesseract.tesseract_cmd = tessexe  # ... and uncomment this
-
-    try:
-        pytesseract.get_tesseract_version()
-        print('Tesseract is working')
-    except Exception as errex:
-        print('Tesseract can not be found')
-        sys.exit()
-
-
-    os.environ['OMP_THREAD_LIMIT'] = '1'  # Use only one cpu core for Tesseract
-
 
     # Threshold for converting pixel to black or white
-    thresh = 60  # 40 is sufficent, 60 is safer
+    thresh = 60  # Higher values will give "thinner" text
     temp_fn = lambda x : 255 if x > thresh else 0
 
 
@@ -353,7 +383,6 @@ def process_frames_f(frame_queue, name_d):
 
         try:
 
-
             # Select area above nameplate text
             # Crop as percent so unaffected by resolution
             height, width = frame_na.shape[:2]
@@ -372,19 +401,9 @@ def process_frames_f(frame_queue, name_d):
             rms = stat.mean[0]
             #print('rms:', rms)
 
-            #if rms > 2:
-            #    continue  # Skip if too bright, ie: nameplate not detected
-
             # Skip if too dark or too bright, ie: nameplate not detected
             if rms < 11 or rms > 14:
                 continue
-
-            time_crop1 = time.time()
-            # Reduce noise by converting to only black or white
-
-            #crop_img = crop_img.convert('L').point(temp_fn, mode='1')
-            crop_img = crop_img.convert('L').point(temp_fn, mode='1')
-            time_crop1_l.append(time.time() - time_crop1)
 
 
             # Reuse x coords for text crop
@@ -393,27 +412,31 @@ def process_frames_f(frame_queue, name_d):
             y2_coord = int(height * .73)
             crop_arr = frame_na[y1_coord:y2_coord, x1_coord:x2_coord]
 
-            crop_img = Image.fromarray(crop_arr)
+            #crop_img = Image.fromarray(crop_arr)
 
-            #crop_img.show()  # will need: pip install opencv-python
-
-            crop_img = ImageOps.invert(crop_img)  # Tesseract expects dark text on light background. Slightly faster than tesseract inverting
+            # Reduce noise by converting to only black or white
+            time_crop1 = time.time()
+            #crop_img = crop_img.convert('L').point(temp_fn, mode='1')
+            #crop_img = crop_img.convert('L').point(temp_fn, mode='L')
+            time_crop1_l.append(time.time() - time_crop1)
+            
+            #crop_img = ImageOps.invert(crop_img)  # Tesseract expects dark text on light background. Slightly faster than tesseract inverting
 
             time_crop2_l.append((time.time() - time_crop2))
 
-
+            #crop_img.show()  # will need? pip install opencv-python
 
 
             # Get text from image, don't invert, whitelist ASCII chars, expect one line of text
             t4 = time.time()
-            text = pytesseract.image_to_string(crop_img, timeout=5, config='''-c tessedit_do_invert=0 -c tessedit_char_whitelist="!\\"#$%&\\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ " --psm 7 --oem 1''').strip()
+            text = pytesseract.image_to_string(crop_arr, timeout=5, config='''-c tessedit_do_invert=1 -c tessedit_char_whitelist="!\\"#$%&\\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ " --psm 7 --oem 1''').strip()
 
             time_tess_l.append((time.time() - t4))
 
 
             # Check for phrases and extract player names
             if text:
-                print(text)
+                print(text)  ##
                 name = clean_names_f(text)
 
                 # Add names to dict
@@ -453,8 +476,14 @@ def progress_f(vid_frame_count, vid_frame_total, current_file_i, all_files_l):
 
 
 if __name__ == '__main__':
-    
+
     print('Arguments:', sys.argv[1:])
+
+    # Set default input and output directory
+    default_path = os.path.dirname(os.path.abspath(sys.argv[0]))
+
+    print(os.path.abspath(sys.argv[0]))
+    print(os.path.abspath(__file__))
 
     # Default options
     arg_d = {
@@ -473,9 +502,9 @@ if __name__ == '__main__':
     # Get user-supplied option values
     arg_d = get_files_f(sys.argv[1:], arg_d)
 
-    # If no files, default to all files and dirs in current dir
+    # If no files as input, default to all files in script/exe dir
     if not all_files_l:
-        arg_d = get_files_f([os.getcwd()], arg_d)
+        arg_d = get_files_f([default_path], arg_d)
 
 
     checked_files_l = []  # Used only by get_frames_f to not start working on same video
@@ -497,7 +526,7 @@ if __name__ == '__main__':
 
         # Append every video from ALL key to checked_files_l
         for value in name_d["  ALL  "]:
-            if not arg_d['noskip']:
+            if not arg_d['noskip']:  # Use only filename if noskip is invoked
                 value = ntpath.basename(value)
             if not value in checked_files_l:
                 checked_files_l.append(value)
@@ -505,10 +534,10 @@ if __name__ == '__main__':
 
     # Set output location if not specified
     if not arg_d['output_loc']:
-        if not arg_d['first_dir'] == 'first':  # Use first specified dir
+        if arg_d['first_dir'] != 'first':  # Use first specified dir
             arg_d['output_loc'] = arg_d['first_dir']
         else:
-            arg_d['output_loc'] = os.getcwd()  # Use pwd
+            arg_d['output_loc'] = default_path  # Use script or exe dir
 
     output_loc = os.path.join(arg_d['output_loc'], result_filename)
 
@@ -516,18 +545,23 @@ if __name__ == '__main__':
     print(json.dumps(arg_d, indent=4))
 
 
+    # Make sure Tesseract is working
+    tess_working = check_tess_f()
+    if not tess_working: sys.exit()
+
+    # Make sure you can write to output file
+    write_working = check_write_f()
+    if not write_working: sys.exit()
+
 
     q_lock = mt.Lock()
     frame_queue = queue.Queue(200)  # Queue max size
-    #p0 = mt.Process(target=get_frames_f, args=(queue, all_files_l))
-    #p0.start()
+
     p1 = mt.Thread(target=get_frames_f, args=(frame_queue, all_files_l))
     p1.start()
     p2 = mt.Thread(target=process_frames_f, args=(frame_queue, name_d))
     p2.start()
 
-
-    #p0.join()
     p1.join()
     p2.join()
 
@@ -536,7 +570,6 @@ if __name__ == '__main__':
 
 
     # Write and display results
-    #json_results = write_res_f(name_d)  ## unn
     print(json.dumps(name_d, indent=4))
     print('\n\n\n\t-------- Complete. --------\n\nOutput file saved at:', output_loc, '\n\n')
 
