@@ -285,13 +285,14 @@ def process_frames_f(frame_queue, name_d):
     
     # Path to Tesseract executeable
     try:
+        os.environ['TESSDATA_PREFIX'] = os.path.join(sys._MEIPASS, 'tess')
         print('Trying Windows Tesseract ...')
-        tessexe = os.path.join(sys._MEIPASS, 'joejoe', 'tesseract.exe')
+        tessexe = os.path.join(sys._MEIPASS, 'tess', 'tesseract.exe')
         pytesseract.tesseract_cmd = tessexe
     except Exception as errex:
         try:
             print('Trying Linux Tesseract ...')
-            tessexe = os.path.join(sys._MEIPASS, 'joejoe', 'tesseract')
+            tessexe = os.path.join(sys._MEIPASS, 'tess', 'tesseract')
             pytesseract.tesseract_cmd = tessexe
         except Exception as errex:
             print('Tesseract not found in frozen temp dir')
