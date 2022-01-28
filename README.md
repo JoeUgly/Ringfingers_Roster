@@ -19,6 +19,9 @@ things to test before starting: +
 tesseract +
 write and read to file +
 numpy unn?
+tess accepts np arrays. remove thresh, wont need pil (will need pil for rms check), will need numpy
+nameplate not opaque?
+
 
 
 
