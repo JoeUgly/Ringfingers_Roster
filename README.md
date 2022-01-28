@@ -6,16 +6,19 @@
 
 fps check
 lenient and very lenient both invoked
+lenient as default option
+example of merging in docs
 use quotes in examples
 ask about video organization
-strip text first
 tess path
-exclude all .exe files? only rr file? sys.argv[0]
+skip invoking file
+exclude all exe files? only rr file? sys.argv[0]
 remind to mark run as executable
 single char args
-things to test before starting:
-tesseract
-write and read to file
+things to test before starting: +
+tesseract +
+write and read to file +
+numpy unn?
 
 
 
