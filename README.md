@@ -1,4 +1,4 @@
-# Dark_Souls_3_Roll_Call
+# Ringfinger's Roster
 
 # ___ UNDER CONSTRUCTION ___
 
