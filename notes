@@ -31,6 +31,7 @@ numpy unn?
 check numpy to tesseract without image convert
 tess accepts np arrays. remove thresh, wont need pil (will need pil for rms check), will need numpy
 nameplate not opaque?
+ubuntu 1804?
 
 
 promote
@@ -107,17 +108,9 @@ single char args options
 #   use dir script is in not cwd: os.path.realpath(__file__)
 
 
-# package:
-# .py
-# freeze
-# container? -
-# github md
-# test on windows
-
-
 # concerns:
-# Task completed is two lines of text. vert crop position is wrong. ignore
-# long names can cause text to go beyond nameplate. ignore
+# Task completed is two lines of text. vert crop position is wrong. can expand text crop area. make this an option
+# long names can cause text to go beyond nameplate. ignore. very lenient will still catch
 # newline char in player name will cause json error
 # get_args_f return arg_d?
 
