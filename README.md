@@ -89,7 +89,8 @@ If any part of the nameplate animation is missing from the video, then this prog
 
 <br/><br/>
 #### Message too long 
-Some messages can be so long that they extend past the edge of the nameplate and therefore not detected. This can be combated with the `--lenient` option. [See below.](#Misinterpreted-characters-in-prefix-or-suffix)\
+Some messages can be so long that they extend past the edge of the nameplate and therefore not detected. This can be alleviated with the `--lenient` option. [See below.](#Misinterpreted-characters-in-prefix-or-suffix)
+
 Some messages consist of two lines and therefore the useful text is not in the excpected location and also not detected. An option to expand the search area for text may be included in a future version.
 
 
