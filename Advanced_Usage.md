@@ -122,7 +122,7 @@ Example:\
 `python ds3_rc.py /path/to/videos/ /path/to/ds3_rc_results.txt`
 
 The results filename must begin with "ds3_rc_results".\
-You can merge multiple result files.
+You can [merge multiple result files](#Merge-multiple-result-files-together).
 
 
 <br/><br/>
