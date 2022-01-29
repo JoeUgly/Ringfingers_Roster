@@ -30,7 +30,7 @@ Advanced features
 ### Table of Contents
 * [Summary](#Summary)
 * [Getting Started](#Getting-Started)
-* [Limitations](#Limitations)
+* [Limitations](#Limitations-and-known-bugs)
 * [FAQ](#FAQ)
 * [How can I help?](#How-can-I-help)
 * [Advanced Usage](/Advanced_Usage.md)
