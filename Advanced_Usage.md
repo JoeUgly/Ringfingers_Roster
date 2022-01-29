@@ -16,9 +16,9 @@
 ## Manual installation method
 1\. Install Python version 3.6+. [Available here](https://www.python.org/downloads/)
 
-2\. Install the following Python packages: pytesseract, opencv-python, Pillow, numpy\
+2\. Install the following Python packages: pytesseract, opencv-python, Pillow\
 Example:\
-`pip install pytesseract, opencv-python-headless, Pillow, numpy`
+`pip install pytesseract opencv-python-headless Pillow`
 
 3\. Install Tesseract-OCR (version 5.0+ is strongly reccomemended)\
 Windows: [Available here](https://github.com/UB-Mannheim/tesseract/wiki)\
