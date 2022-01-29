@@ -89,8 +89,8 @@ If any part of the nameplate animation is missing from the video, then this prog
 
 <br/><br/>
 #### Message too long 
-Some messages can be so long that they extend past the edge of the nameplate and therefore not detected.\
-Some messages consist of two lines and therefore the useful text is not in the excpected location and also not detected.
+Some messages can be so long that they extend past the edge of the nameplate and therefore not detected. This can be combated with the `--lenient` option. [See below.](#Misinterpreted-characters-in-prefix-or-suffix)\
+Some messages consist of two lines and therefore the useful text is not in the excpected location and also not detected. An option to expand the search area for text may be included in a future version.
 
 
 <br/><br/>
@@ -117,17 +117,21 @@ Prefix: Phantom\
 Suffix: has been summoned\
 Player name: XXsoandsoXX
 
-An exact match for both the prefix and the suffix is required. \
-A single misinterpreted character in the prefix / suffix will cause the frame (and name) to be discarded.
+Default behavior:\
+An exact match for either a known prefix or a suffix is required. 
+If a prefix or suffix is found in the text, then name extraction will occur.
 
-This behavior can be changed to be more forgiving by invoking the `--lenient` or `--verylenient` options.\
-Using `--lenient` will extract a player name, even if a prefix or suffix is not detected. \
-Using `--verylenient` will extract a player name, even if both the prefix and suffix are not detected.\
+This behavior can be changed by invoking the `--strict` or `--lenient` options.\
+Using `--strict` will not extract a player name, unless both a prefix and a suffix is detected.\
+Using `--lenient` will extract a player name, even if both the prefix and suffix are not detected.\
 Example:\
 `C:\Users\jugly\Desktop\Downloads\rr.exe --lenient C:\Users\jugly\Desktop\DS3Videos\`
 
-These options will cause increasingly more entries into the output file, many of which will be false positives.\
-If you want to maximise the chances of detecting a player's name and you are not concerned about a somewhat bloated output file, then use these options.
+The `--lenient` option will allow more entries into the output file, many of which will be false positives.\
+If you want to maximise the chances of detecting a player's name and you are not concerned about a bloated output file, then use this option.
+
+Conversely, if you feel that there are too many erroneous entries in the result file, then use the `--strict` option.
+Note: A single misinterpreted character in the prefix or suffix will cause the frame (and name) to be discarded.
 
 
 <br/><br/>
