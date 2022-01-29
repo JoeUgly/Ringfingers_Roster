@@ -158,7 +158,7 @@ Example:\
 
 You can increase the number of directories and instances until your CPU usage is maximised.
 
-This will create two separate reuslt files. See [Merge result files](#Merge-multiple-result-files)
+This will create two separate reuslt files. See [Merge result files](#Merge-multiple-result-files-together)
 
 A future version may include an option to set the number of threads this program uses.
 
@@ -202,9 +202,12 @@ Example using CMD:\
 Example using Bash:\
 `SHA256sum rr.exe`
 
+
+<br/><br/>
 ### linux mark as exe
 
 
+<br/><br/>
 ### Merge multiple result files together
 Create an empty directory. Move the executable and the result files into the directory. Run the program.
 
