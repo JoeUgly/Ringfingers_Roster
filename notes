@@ -1,39 +1,44 @@
 
 
-
-
 #720/1080 '/home/joepers/Videos/DS3/all/DARK SOULS™ III_ The Fire Fades™ Edition_20200916210007.mp4' '/home/joepers/Videos/DS3/all/DARK SOULS™ III_ The Fire Fades™ Edition_20210104173816.webm'
 
 
 # To do:
 
-
 actually needs to be done:
 repo name
 test all options
-double lenient +
-output location
+output location +
 if multi dirs output default to cwd or dir of code?
 skip file if X numb of frame read errors in a row +
 reduce dependancies
 deal with \u2122 TM
 how handle adding grand totals on error
-check numpy to tesseract without image convert
 no comma in between pip?
-sys.exit doesnt work
+sys.exit doesnt work +
 
+win 11
 
-freeze and test compatability
-    win 10
-    win 11
+lenient and very lenient both invoked. check and exit
+lenient as default option
+example of merging in docs
+use quotes in examples
+tess path
+skip invoking file +
+exclude all exe files? only rr file? sys.argv[0]
+remind to mark run as executable
+numpy unn?
+check numpy to tesseract without image convert
+tess accepts np arrays. remove thresh, wont need pil (will need pil for rms check), will need numpy
+nameplate not opaque?
+
 
 promote
-    g9 discord
+    discord
     youtube story post
     reddit post
     contact email
-
-
+    ask about video organization
 
 
 problem vids:
@@ -49,9 +54,7 @@ https://github.com/tesseract-ocr/tesseract/blob/main/doc/tesseract.1.asc#config-
 
 import ntpath
 
-use
-pip install opencv-python-headless
-if not using cv2.imshow
+
 
 
 
@@ -81,7 +84,7 @@ if not using cv2.imshow
 
 # error catch
 #   fps, frame counts etc
-
+fps check
 
 # misc:
 # text cleanup +
@@ -89,6 +92,7 @@ if not using cv2.imshow
 # more benchmarking
 # write output after every video +
 config file?
+single char args options
 
 # options:
 # double confirm names -
