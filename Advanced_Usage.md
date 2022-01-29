@@ -69,8 +69,10 @@ This program will accept any combination of these four types of arguments:
 All options must begin with `--`.\
 All result files must begin with `ds3_rr_results`.
 
-If no files or directories are given, the program will use the current working directory.
+If no files or directories are given, the program will use the directory containing the executable/script.
 
+
+<br/><br/>
 Directory searches are recursive by default. Disable this with the `--nonrecursive` option.\
 Only directories given AFTER the --nonrecursive option will be nonrecursive.
 
