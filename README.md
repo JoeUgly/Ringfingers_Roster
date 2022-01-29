@@ -4,26 +4,6 @@
 
 ## Extract other players' names from your Dark Souls 3 gameplay videos
 
-fps check
-lenient and very lenient both invoked
-lenient as default option
-example of merging in docs
-use quotes in examples
-ask about video organization
-tess path
-skip invoking file
-exclude all exe files? only rr file? sys.argv[0]
-remind to mark run as executable
-single char args
-things to test before starting: +
-tesseract +
-write and read to file +
-numpy unn?
-tess accepts np arrays. remove thresh, wont need pil (will need pil for rms check), will need numpy
-nameplate not opaque?
-
-
-
 
 
 Phase 1:
