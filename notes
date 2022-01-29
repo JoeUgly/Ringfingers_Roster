@@ -1,0 +1,232 @@
+
+
+
+
+#720/1080 '/home/joepers/Videos/DS3/all/DARK SOULS™ III_ The Fire Fades™ Edition_20200916210007.mp4' '/home/joepers/Videos/DS3/all/DARK SOULS™ III_ The Fire Fades™ Edition_20210104173816.webm'
+
+
+# To do:
+
+
+actually needs to be done:
+repo name
+test all options
+double lenient +
+output location
+if multi dirs output default to cwd or dir of code?
+skip file if X numb of frame read errors in a row +
+reduce dependancies
+deal with \u2122 TM
+how handle adding grand totals on error
+check numpy to tesseract without image convert
+no comma in between pip?
+sys.exit doesnt work
+
+
+freeze and test compatability
+    win 10
+    win 11
+
+promote
+    g9 discord
+    youtube story post
+    reddit post
+    contact email
+
+
+
+
+problem vids:
+3lade of the Darkmoon Anubis_God01 summoned through concord: /home/joepers/Videos/DS3/all/DARK SOULS™ III_ The Fire Fades™ Edition_20200916210007.mp4
+shadow_4_1: "/home/joepers/Videos/DS3/2v1/DARK SOULS™ III_ The Fire Fades™ Edition_20200217225510.mp4"
+
+
+does thresh improve text - no
+
+disable/ new tess word dict
+https://tesseract-ocr.github.io/tessdoc/tess3/ControlParams.html
+https://github.com/tesseract-ocr/tesseract/blob/main/doc/tesseract.1.asc#config-files-and-augmenting-with-user-data
+
+import ntpath
+
+use
+pip install opencv-python-headless
+if not using cv2.imshow
+
+
+
+
+
+
+# faster
+#   mulit instances
+#   async? - not waiting on IO or net
+#       try it for vcap.read
+#   calc rms and reduce noise from numpy array not image
+#       currently converting to image 2 times
+#   read fewer frames
+#   OCR fewer frames
+#   set region and channel of interest before read. cv.SetImageCOI(image, coi) -
+#   different video reader
+#       decord: high mem usage, not faster
+#       imageio: similar speed
+#       ffmpeg: confusing, weird format
+# Batch processing with a single file containing the list of multiple image file paths
+# print(pytesseract.image_to_string('images.txt'))
+
+# accuracy
+#   train with font
+#   upgrade tesseract: sudo add-apt-repository ppa:alex-p/tesseract-ocr-devel +
+#   optional fuzzy matching for phrases
+
+# error catch
+#   fps, frame counts etc
+
+
+# misc:
+# text cleanup +
+# these chars are detected: ¥, \n, |
+# more benchmarking
+# write output after every video +
+config file?
+
+# options:
+# double confirm names -
+# check only part of vid. ex: first or last minute
+# loose phrase matching +
+#   double lenient +
+#   should loose be default?
+# verbose / benchmarking
+# dup: exclude vid name or path? +
+# output location +
+#   user specified, then first dir, then cwd
+#   use dir script is in not cwd: os.path.realpath(__file__)
+
+
+# package:
+# .py
+# freeze
+# container? -
+# github md
+# test on windows
+
+
+# concerns:
+# Task completed is two lines of text. vert crop position is wrong. ignore
+# long names can cause text to go beyond nameplate. ignore
+# newline char in player name will cause json error
+# get_args_f return arg_d?
+
+
+
+later future roadmap
+tally wins vs loses against a player? win percent as invader vs ganker?
+
+
+
+# works:
+#   '--output=/home/joepers/Videos/DS3/Untitled Folder'
+#   --output='/home/joepers/Videos/DS3/Untitled Folder'
+#   --output=/home/joepers/Videos/DS3/Untitled\ Folder 
+
+
+
+# 60 fps:
+# np starts at ~ 5s, ends ~ 10s
+# 17f of transparency
+# opaque from 18f - 54f (36f)
+# 17f of transparency
+# 11f of clear
+# 17f of transparency
+# 46f of non useable frames in between
+# 0.439s
+# max window = 67f?
+
+
+
+      good                good                good
+1:00.00 - 1:00.36 - 1:01.22 - 1:01.58 - 1:02.44 - 1:03.20
+                 bad                 bad
+
+
+
+
+
+
+
+
+
+
+
+
+Duration: 0:00:40.153840 
+Frames/sec: 201
+
+
+Duration: 0:00:20.612868 
+Frames/sec: 402
+
+
+
+
+Duration: 0:00:22.431269 
+Frames/sec: 519
+duration_grand_total: 387.1
+17.5x
+
+Duration: 0:02:21.178598 
+Frames/sec: 325
+duration_grand_total: 763.4833333333333
+5.5x
+
+
+
+
+
+
+
+
+dash means frame was in queue and ready
+7 means queue was empty
+
+.01
+
+720
+7: 538
+-: 177
+
+1080
+7: 900
+-: 90
+
+
+waiting on read frame 
+
+
+
+.1
+
+720
+7: 60
+-: 177
+
+
+
+
+3801.325937986374
+
+
+Run time duration: 63 minutes
+Footage processed: 1191 minutes
+
+Ave processing speed: 18.8x
+Ave frames processed / sec: 6292
+img convert ave: 0.00024277484353636683
+video capture read ave: 0.021718774158127455
+frame read ave: 0.05980664651107539
+
+
+
+
+
+
