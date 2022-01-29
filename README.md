@@ -84,7 +84,7 @@ This program detects player names **ONLY** when the nameplate appears.
 This program assumes the entire nameplate animation (the nameplate message fading in and out multiple times) is present in the video.\
 If any part of the nameplate animation is missing from the video, then this program might not capture that player's name.
 
-<u> **Does not work on arena fights.** </u>
+<u> **Does not work on arena fights.** <\u>
 
 
 <br/><br/>
