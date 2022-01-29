@@ -119,7 +119,7 @@ Suffix: has been summoned\
 Player name: XXsoandsoXX
 
 Default behavior:\
-An exact match for either a known prefix or a suffix is required. 
+An exact match for either a known prefix or suffix is required. 
 If a prefix or suffix is found in the text, then name extraction will occur.
 
 This behavior can be changed by invoking the `--strict` or `--lenient` options.\
@@ -131,8 +131,8 @@ Example:\
 The `--lenient` option will allow more entries into the output file, many of which will be false positives.\
 If you want to maximise the chances of detecting a player's name and you are not concerned about a bloated output file, then use this option.
 
-Conversely, if you feel that there are too many erroneous entries in the result file, then use the `--strict` option.
-Note: A single misinterpreted character in the prefix or suffix will cause the frame (and name) to be discarded.
+Conversely, if you feel that there are too many erroneous entries in the result file, then use the `--strict` option.\
+Note: A single misinterpreted character in either the prefix or suffix will cause the frame (and name) to be discarded.
 
 
 <br/><br/>
