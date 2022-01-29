@@ -6,31 +6,30 @@
 # To do:
 
 actually needs to be done:
-repo name
 test all options
 output location +
-if multi dirs output default to cwd or dir of code?
 skip file if X numb of frame read errors in a row +
-reduce dependancies
 deal with \u2122 TM
 how handle adding grand totals on error
-no comma in between pip?
-sys.exit doesnt work +
+replace rc with rr in docs. check all filenames
+spellcheck
+use quotes in examples
+tips and troubleshoot
+remind to mark run as executable. need to get name of error
+name of checksum compression error. failed to extract
 
 win 11
 
 lenient and very lenient both invoked. check and exit
 lenient as default option
-example of merging in docs
-use quotes in examples
-tess path
-skip invoking file +
+tess path +
+"Uncomment next line" needs to be commented
+skip invoking file
 exclude all exe files? only rr file? sys.argv[0]
-remind to mark run as executable
 numpy unn?
 check numpy to tesseract without image convert
 tess accepts np arrays. remove thresh, wont need pil (will need pil for rms check), will need numpy
-nameplate not opaque?
+nameplate not opaque? max opacity?
 ubuntu 1804?
 which char can be in name. multi languages?
 
@@ -39,7 +38,7 @@ promote
     discord
     youtube story post
     reddit post
-    contact email
+    contact email?
     ask about video organization
 
 
@@ -48,14 +47,14 @@ problem vids:
 shadow_4_1: "/home/joepers/Videos/DS3/2v1/DARK SOULS™ III_ The Fire Fades™ Edition_20200217225510.mp4"
 
 
-does thresh improve text - no
+does thresh improve text - no. test again
 
 disable/ new tess word dict
 https://tesseract-ocr.github.io/tessdoc/tess3/ControlParams.html
 https://github.com/tesseract-ocr/tesseract/blob/main/doc/tesseract.1.asc#config-files-and-augmenting-with-user-data
 
 import ntpath
-
+only available on?
 
 
 
