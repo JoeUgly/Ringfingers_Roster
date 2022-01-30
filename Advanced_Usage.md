@@ -195,7 +195,8 @@ It probably means your distro is too old. Either upgrade, use the manuall instal
 
 
 <br/><br/>
-### compression error checksum
+### Checksums
+If you get an error similar stating something like `Failed to extract ... decompression resulted in return code`
 Compare the values from the checksum file to make sure your file is not corrupted. A checksum file is included in each release.
 
 Example using Powershell:\
@@ -203,7 +204,7 @@ Example using Powershell:\
 Example using CMD:\
 `certutil -hashfile rr.exe sha256`\
 Example using Bash:\
-`SHA256sum rr`
+`sha256sum rr`
 
 
 <br/><br/>
