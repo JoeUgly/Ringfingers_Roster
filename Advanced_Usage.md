@@ -188,12 +188,15 @@ Example:\
 
 <br/><br/>
 ### old glibc linux error
-This program is expected to work on Ubuntu 20.04 and newer. Similar distros should work, but have not been tested.
+This program is expected to work on Ubuntu 20.04 and newer. Similar distros should work, but have not been tested.\
+If you get an error similar to this:
+`[13268] Error loading Python lib '/tmp/_MEIKPWmtg/libpython3.8.so.1.0': dlopen: /lib/x86_64-linux-gnu/libm.so.6: version 'GLIBC_2.29' not found (required by /tmp/_MEIKPWmtg/libpython3.8.so.1.0)`\
+It probably means your distro is too old. Either upgrade, use the manuall installation method, or let me know and I could make a version for you.
 
 
 <br/><br/>
 ### compression error checksum
-Compare the values frim the checksum file to make sure your file is not corrupted. A checksum file is included in each release.
+Compare the values from the checksum file to make sure your file is not corrupted. A checksum file is included in each release.
 
 Example using Powershell:\
 `Get-FileHash rr.exe`\
