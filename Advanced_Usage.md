@@ -187,7 +187,7 @@ Example:\
 
 
 <br/><br/>
-### old glibc linux error
+### Old GLIBC Linux error
 This program is expected to work on Ubuntu 20.04 and newer. Similar distros should work, but have not been tested.\
 If you get an error similar to this:
 `[13268] Error loading Python lib '/tmp/_MEIKPWmtg/libpython3.8.so.1.0': dlopen: /lib/x86_64-linux-gnu/libm.so.6: version 'GLIBC_2.29' not found (required by /tmp/_MEIKPWmtg/libpython3.8.so.1.0)`\
