@@ -208,8 +208,8 @@ Example using Bash:\
 
 
 <br/><br/>
-### linux mark as exe
-<< name of permission error
+### Linux Permission Denied
+Be sure to allow executing file as a program.
 
 
 <br/><br/>
