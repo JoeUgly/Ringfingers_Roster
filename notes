@@ -9,13 +9,13 @@ actually needs to be done:
 test all options
 output location +
 skip file if X numb of frame read errors in a row +
-deal with \u2122 TM
+deal with \u2122 TM +
 how handle adding grand totals on error
 replace rc with rr in docs. check all filenames
 spellcheck
 use quotes in examples
 tips and troubleshoot
-remind to mark run as executable. need to get name of error
+remind to mark run as executable. mark as executable in github
 name of checksum compression error. failed to extract
 perf example
 
