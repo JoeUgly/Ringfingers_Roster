@@ -35,7 +35,8 @@ check numpy to tesseract without image convert
 tess accepts np arrays. remove thresh, wont need pil (will need pil for rms check), will need numpy
 nameplate not opaque? max opacity?
 ubuntu 1804?
-which char can be in name. multi languages?
+which char can be in name
+actual highest lowest nameplate brightness
 
 
 promote
@@ -231,4 +232,25 @@ frame read ave: 0.05980664651107539
 
 
 
+
+720p
+Ave processing speed: 21.6x
+Ave frames / sec: 649
+video capture ave: 0.009925365447998047
+frame read ave: 0.051867506720803
+img convert ave: 0.0
+OCR read ave: 0.13903422977613367
+
+Version: 0.1.0-beta
+
+
+1080p
+Ave processing speed: 6.4x
+Ave frames / sec: 385
+video capture ave: 0.05648088455200195
+frame read ave: 0.17371179174364573
+img convert ave: 0.0
+OCR read ave: 0.13992436035819675
+
+Version: 0.1.0-beta
 
