@@ -146,7 +146,8 @@ This is because the contents of the file must be written to disk as a temporary 
 
 #### Processing
 Videos consist of a lot of data, so processing it will be somewhat slow.\
-The speed at which this occurs is mostly dependent on your CPU and the video resolution.\
+The speed at which this occurs is mostly dependent on your CPU and the video resolution. It seems that the codec / file type also plays a role. More testing is needed.
+
 Surprisingly, the biggest bottleneck in this program is opening and reading a frame. On my Ryzen 2200G, just reading the frame data is much slower than playback speed. I suspect this is due to a lack of hardware acceleration.
 
 <br/><br/>
