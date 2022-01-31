@@ -8,34 +8,27 @@
 actually needs to be done:
 test all options
 output location +
+output to script location? video dir
 skip file if X numb of frame read errors in a row +
-deal with \u2122 TM +
 how handle adding grand totals on error
 replace rc with rr in docs. check all filenames
 spellcheck
 use quotes in examples
-tips and troubleshoot
-remind to mark run as executable. mark as executable in github
-name of checksum compression error. failed to extract
 perf example
+perf varies with file type/codec
 
-win 11
+win 11 - compatible with win 10
 
-lenient and very lenient both invoked. check and exit? -
 lenient as default option +
 tess path +
-"Uncomment next line" needs to be commented
 skip invoking file
 exclude all exe files? only rr file? sys.argv[0]
-numpy unn?
-tess batch
-tess fast data
-latin alphabet only
-check numpy to tesseract without image convert
-tess accepts np arrays. remove thresh, wont need pil (will need pil for rms check), will need numpy
-nameplate not opaque? max opacity?
+tess batch - can only read file paths from disk
+tess fast data - only works with tess 4
+numpy to tesseract without image convert +
 ubuntu 1804?
 which char can be in name
+latin alphabet only
 actual highest lowest nameplate brightness
 high: 13.112666573338933
 low: 12.468651880887148
