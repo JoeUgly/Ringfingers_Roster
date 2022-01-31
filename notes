@@ -300,4 +300,50 @@ OCR read ave: 0.0
 Version: 0.1.0-beta
 
 
+1080 to 720 conversion
+Input #0, matroska,webm, from 'MyMovie_720p.mkv':
+  Metadata:
+    ENCODER         : Lavf58.76.100
+  Duration: 00:00:58.06, start: -0.002000, bitrate: 13375 kb/s
+  Stream #0:0: Video: h264 (High), yuv420p(tv, bt709, progressive), 1274x722 [SAR 3761:3733 DAR 958306:539047], SAR 134:133 DAR 12194:6859, 59.94 fps, 59.94 tbr, 1k tbn, 119.88 tbc (default)
+    Metadata:
+      ENCODER         : Lavc58.134.100 libx264
+      DURATION        : 00:00:58.058000000
+  Stream #0:1: Audio: opus, 48000 Hz, stereo, fltp (default)
+    Metadata:
+      DURATION        : 00:00:58.061000000
+
+Ave processing speed: 4.3x
+Ave frames / sec: 259
+video capture ave: 0.01253366470336914
+frame read ave: 0.262606003705193
+img convert ave: 0.0
+OCR read ave: 0.0
+
+Version: 0.1.0-beta
+
+
+
+1080 to 1080 conversion
+Input #0, matroska,webm, from '/home/joepers/Desktop/t/MyMovie_1080p.mkv':
+  Metadata:
+    ENCODER         : Lavf58.76.100
+  Duration: 00:00:58.06, start: -0.002000, bitrate: 26464 kb/s
+  Stream #0:0: Video: h264 (High), yuv420p(tv, bt709, progressive), 1906x1080 [SAR 960:953 DAR 16:9], SAR 137:136 DAR 130561:73440, 59.94 fps, 59.94 tbr, 1k tbn, 119.88 tbc (default)
+    Metadata:
+      ENCODER         : Lavc58.134.100 libx264
+      DURATION        : 00:00:58.058000000
+  Stream #0:1: Audio: opus, 48000 Hz, stereo, fltp (default)
+    Metadata:
+      DURATION        : 00:00:58.061000000
+
+Ave processing speed: 2.2x
+Ave frames / sec: 132
+video capture ave: 0.02107524871826172
+frame read ave: 0.5143602502112296
+img convert ave: 0.0
+OCR read ave: 0.0
+
+Version: 0.1.0-beta
+
 
