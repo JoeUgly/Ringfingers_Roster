@@ -254,3 +254,50 @@ OCR read ave: 0.13992436035819675
 
 Version: 0.1.0-beta
 
+
+
+
+
+60 fps
+Input #0, matroska,webm, from '/home/joepers/Desktop/t/DARK SOULS™ III_ The Fire Fades™ Edition_20210125135913.webm':
+  Metadata:
+    encoder         : webmvideoedit-0.1.0
+  Duration: 00:00:58.04, start: 0.000000, bitrate: 20061 kb/s
+  Stream #0:0: Video: vp9 (Profile 0), yuv420p(pc, bt709), 1920x1088, SAR 136:135 DAR 16:9, 59.94 fps, 59.94 tbr, 1k tbn, 1k tbc (default)
+  Stream #0:1: Audio: opus, 48000 Hz, stereo, fltp (default)
+
+Ave processing speed: 6.0x
+Ave frames / sec: 358
+video capture ave: 0.018714427947998047
+frame read ave: 0.18961786756328508
+img convert ave: 0.0
+OCR read ave: 0.17437243461608887
+
+Version: 0.1.0-beta
+
+
+30 fps
+Input #0, matroska,webm, from '/home/joepers/Desktop/t/30fps.webm':
+  Metadata:
+    ENCODER         : Lavf58.76.100
+  Duration: 00:00:58.07, start: -0.007000, bitrate: 9926 kb/s
+  Stream #0:0: Video: vp9 (Profile 0), yuv420p(pc, bt709, progressive), 1920x1088, SAR 138:137 DAR 4140:2329, 30 fps, 30 tbr, 1k tbn, 1k tbc (default)
+    Metadata:
+      ENCODER         : Lavc58.134.100 libvpx-vp9
+      DURATION        : 00:00:58.069000000
+  Stream #0:1: Audio: opus, 48000 Hz, stereo, fltp (default)
+    Metadata:
+      ENCODER         : Lavc58.134.100 libopus
+      DURATION        : 00:00:58.065000000
+
+Ave processing speed: 3.9x
+Ave frames / sec: 119
+video capture ave: 0.02127981185913086
+frame read ave: 0.28514771835476743
+img convert ave: 0.0
+OCR read ave: 0.0
+
+Version: 0.1.0-beta
+
+
+
