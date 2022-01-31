@@ -166,9 +166,9 @@ This will create two separate result files. See [Merge result files](#Merge-mult
 <br/><br/>
 I have made every effort to make this program as performant as possible. Including:
 * Multithreading using a queue for the frames
-* Reading the fewest number of frames needed to sample an opaque nameplate
+* Reading the fewest number of frames needed to sample an "opaque" nameplate
 * Using the index operator to discard color data prior to var assignment
-* Cropping the Numpy array prior to converting to an image
+* Cropping the Numpy array without converting to an image
 * Checking for nameplate presence prior to OCR
 * Single thread Tesseract (10x faster OCR on 1080p)
 * Skipping duplicate files
@@ -234,7 +234,7 @@ After a frame is taken from the queue, it is cropped to a small area near the to
 
 If a nameplate is determined to likely be present, then the nameplate is cropped where the text is located.
 
-At this time the frame is converted to an image using PIL. It is converted to black and white to reduce noise. Optical character recognition (OCR) using PyTesseract (Tesseract) is performed.
+Optical character recognition (OCR) using PyTesseract (Tesseract) is performed.
 
 If an appropriate phrase is detected (such as "Invaded the World of ...", "Phantom ... has died", etc), then the player name is appended to the result (output) dictionary.
 
