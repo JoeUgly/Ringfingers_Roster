@@ -134,22 +134,23 @@ def check_tess_f():
 
 # Make sure write to file is working
 def check_write_f():
-    test_loc = os.path.join(arg_d['output_dir'], 'rr_test_filename')
-    with open(test_loc, 'w', errors='replace') as output_file:
-        output_file.write('TEST_TEXT')
+    try:
+        test_loc = os.path.join(arg_d['output_dir'], 'rr_test_filename')
+        with open(test_loc, 'w', errors='replace') as output_file:
+            output_file.write('TEST_TEXT')
 
-    with open(test_loc, 'r') as output_file:
-        content = output_file.read()
-    
-    if content == 'TEST_TEXT':
-        os.remove(test_loc) 
-        return True
-    else:
-        print('Can not read/write at output file location. Check the path and permissions.')
+        with open(test_loc, 'r') as output_file:
+            content = output_file.read()
+
+        if content == 'TEST_TEXT':
+            os.remove(test_loc) 
+            return True
+        else:
+            raise
+    except:
+        print('\n\n __Error: Can not read/write at output file location. Check the path and permissions.')
         print('Output file location:', arg_d['output_dir'])
         return False
-
-
 
 # Extract player names from text
 def clean_names_f(text):
