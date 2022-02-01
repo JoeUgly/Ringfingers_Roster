@@ -3,18 +3,16 @@
 
 
 
-
 import time
 import sys
 import os
 import ntpath
 import cv2
+import mimetypes
 from pytesseract import pytesseract
 import json
 import threading as mt
 import queue
-
-
 
 
 
@@ -234,16 +232,24 @@ def get_frames_f(frame_queue, all_files_l):
                 video_name = ntpath.basename(video_path)
 
             if video_name in checked_files_l:
-                print('\n Skipping video:', video_path)
+                print('\n Skipping file:', video_path)
                 continue
             else:
                 checked_files_l.append(video_name)
 
 
             # Read video
-            print('\n Starting video:', video_path)
-            vid_frame_count = 0
+            print('\n Starting file:', video_path)
+            
+            # Check if file is a video
+            mimetype_res = mimetypes.guess_type(video_path)[0]
+            if not mimetype_res.startswith('video'):
+                print('File MIME type detected as non-video. Skipping:', video_path, mimetype_res)
+                continue
+                
+            # Set video capture
             try:
+                vid_frame_count = 0
                 time_vcap = time.time()
                 vcap = cv2.VideoCapture(video_path)
                 time_vcap_l.append((time.time() - time_vcap))
@@ -464,11 +470,8 @@ if __name__ == '__main__':
 
     print('Arguments:', sys.argv[1:])
 
-    # Set default input and output directory
+    # Default input and output directory
     default_path = os.path.dirname(os.path.abspath(sys.argv[0]))
-
-    print(os.path.abspath(sys.argv[0]))
-    print(os.path.abspath(__file__))
 
     # Default options
     arg_d = {
@@ -568,7 +571,6 @@ if __name__ == '__main__':
     frame_grand_total, duration_grand_total = frame_queue.get()
     duration = time.time() - startTime
 
-    print(duration)  ##
     print('\n\nRun time duration:', round(duration / 60), 'minutes')
     print('Footage processed:', round(duration_grand_total / 60), 'minutes')
     print('\nAve processing speed:', str(round(duration_grand_total / duration, 1)) + 'x')
@@ -577,7 +579,7 @@ if __name__ == '__main__':
     print('frame read ave:', sum(time_fr_l) / len(time_fr_l))
     print('img convert ave:', sum(time_crop1_l) / len(time_crop1_l))
     print('OCR read ave:', sum(time_tess_l) / len(time_tess_l))
-    print('\nVersion: 0.1.0-beta')
+    print('\nVersion: 0.2.0-beta')
 
     input('END')
 
