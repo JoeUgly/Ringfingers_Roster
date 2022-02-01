@@ -7,9 +7,9 @@
 
 actually needs to be done:
 test all options
-output location +
+output location: if multi dirs then use cwd
+output file is written only after successful video processing. if all vids are skipped then no output unless you want to add another write in main
 test output location is dir?
-output to script location? video dir
 how handle adding grand totals on error
 replace rc with rr in docs. check all filenames
 spellcheck
