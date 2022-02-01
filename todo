@@ -16,18 +16,10 @@ replace rc with rr in docs. check all filenames
 spellcheck
 use quotes in examples
 perf example
-perf varies with file type/codec
+if mimetypes.guess_type('file_path')[0].startswith('video'):
 
-
-win 11 - compatible with win 10
-
-lenient as default option +
-tess path +
 skip invoking file
 exclude all exe files? only rr file? sys.argv[0]
-tess batch - can only read file paths from disk
-tess fast data - only works with tess 4
-numpy to tesseract without image convert +
 ubuntu 1804?
 which char can be in name
 latin alphabet only
