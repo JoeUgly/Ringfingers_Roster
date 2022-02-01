@@ -10,7 +10,6 @@ test all options
 output location +
 test output location is dir?
 output to script location? video dir
-skip file if X numb of frame read errors in a row +
 how handle adding grand totals on error
 replace rc with rr in docs. check all filenames
 spellcheck
@@ -21,7 +20,9 @@ if mimetypes.guess_type('file_path')[0].startswith('video'):
 skip invoking file
 exclude all exe files? only rr file? sys.argv[0]
 ubuntu 1804?
-which char can be in name
+test on manjaro
+test mulit instances
+which char can be in name - must allow pc player names
 latin alphabet only
 actual highest lowest nameplate brightness
 high: 13.112666573338933
