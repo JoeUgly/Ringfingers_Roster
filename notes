@@ -8,6 +8,7 @@
 actually needs to be done:
 test all options
 output location +
+test output location is dir?
 output to script location? video dir
 skip file if X numb of frame read errors in a row +
 how handle adding grand totals on error
