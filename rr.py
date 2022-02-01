@@ -49,6 +49,7 @@ def get_files_f(arg_l, arg_d):
                 print('Option set: noskip')
             elif item.startswith('--output='):
                 arg_d['output_dir'] = ''.join(item.split('--output=')[1:])
+                arg_d['explicit_output'] = True
                 print('Option set: output location:', arg_d['output_dir'])
             elif item == '--strict':
                 arg_d['leniency'] = 0
@@ -62,10 +63,11 @@ def get_files_f(arg_l, arg_d):
         # Directory
         elif os.path.isdir(item):
             if arg_d['recursive'] or not arg_d['output_dir']:
-                if not arg_d['output_dir']:  # Set first dir
-                    arg_d['output_dir'] = item
-                elif not os.path.abspath(item) in os.path.abspath(arg_d['output_dir']):  # Is not child dir
-                    arg_d['output_dir'] = os.getcwd()  # Use PWD as output location when multi dirs are invoked
+                if not arg_d['explicit_output']:
+                    if not arg_d['output_dir']:  # Set first dir
+                        arg_d['output_dir'] = item
+                    elif not os.path.abspath(arg_d['output_dir']) in os.path.abspath(item):  # Is not child dir
+                        arg_d['output_dir'] = os.getcwd()  # Use CWD as output location when multi dirs are invoked
                     
                 child_l = [os.path.join(item, child) for child in os.listdir(item)]  # List of items in dir
                 get_files_f(child_l, arg_d)  ## does this need to return a new arg_d? arg_d = get_files_f(child_l, arg_d)
@@ -113,7 +115,7 @@ def check_tess_f():
     else:
         print('Running as a script')
         # Uncomment next line and replace with your location of the Tesseract executable
-        #pytesseract.tesseract_cmd = r"C:\Users\jhalb\AppData\Local\Programs\Tesseract-OCR\tesseract.exe"
+        pytesseract.tesseract_cmd = r"C:\Users\jschiffler\AppData\Local\Programs\Tesseract-OCR\tesseract.exe"
 
     # Check if Tesseract is working
     try:
@@ -246,7 +248,7 @@ def get_frames_f(frame_queue, all_files_l):
             
             # Check if file is a video
             mimetype_res = mimetypes.guess_type(video_path)[0]
-            if not mimetype_res.startswith('video'):
+            if not mimetype_res or not mimetype_res.startswith('video'):
                 print('File MIME type detected as non-video. Skipping:', video_path, mimetype_res)
                 continue
                 
@@ -481,6 +483,7 @@ if __name__ == '__main__':
     'recursive': True,
     'noskip': False,
     'output_dir': None,
+    'explicit_output': False,
     'result_file_l': [],
     'leniency': 1
     }
