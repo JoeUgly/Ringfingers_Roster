@@ -17,6 +17,7 @@ use quotes in examples
 perf example
 perf varies with file type/codec
 
+
 win 11 - compatible with win 10
 
 lenient as default option +
@@ -52,6 +53,13 @@ does thresh improve text - no. test again
 disable/ new tess word dict
 https://tesseract-ocr.github.io/tessdoc/tess3/ControlParams.html
 https://github.com/tesseract-ocr/tesseract/blob/main/doc/tesseract.1.asc#config-files-and-augmenting-with-user-data
+
+
+later:
+trailing exclam mark sometimes
+detect some common words like "summon" and "darkmoon" to help with long messages
+sort result file
+"~" doesnt work in output arg
 
 import ntpath
 only available on?
