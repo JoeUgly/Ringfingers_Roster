@@ -48,8 +48,8 @@ def get_files_f(arg_l, arg_d):
                 arg_d['noskip'] = True
                 print('Option set: noskip')
             elif item.startswith('--output='):
-                arg_d['output_loc'] = ''.join(item.split('--output=')[1:])
-                print('Option set: output location:', arg_d['output_loc'])
+                arg_d['output_dir'] = ''.join(item.split('--output=')[1:])
+                print('Option set: output location:', arg_d['output_dir'])
             elif item == '--strict':
                 arg_d['leniency'] = 0
                 print('Option set: strict phrase matching')
@@ -61,11 +61,11 @@ def get_files_f(arg_l, arg_d):
 
         # Directory
         elif os.path.isdir(item):
-            if arg_d['recursive'] or not arg_d['output_loc']:
-                if not arg_d['output_loc']:  # Set first dir
-                    arg_d['output_loc'] = item
-                elif not os.path.abspath(item) in os.path.abspath(arg_d['output_loc']):  # Is not child dir
-                    arg_d['output_loc'] = os.getcwd()  # Use PWD as output location when multi dirs are invoked
+            if arg_d['recursive'] or not arg_d['output_dir']:
+                if not arg_d['output_dir']:  # Set first dir
+                    arg_d['output_dir'] = item
+                elif not os.path.abspath(item) in os.path.abspath(arg_d['output_dir']):  # Is not child dir
+                    arg_d['output_dir'] = os.getcwd()  # Use PWD as output location when multi dirs are invoked
                     
                 child_l = [os.path.join(item, child) for child in os.listdir(item)]  # List of items in dir
                 get_files_f(child_l, arg_d)  ## does this need to return a new arg_d? arg_d = get_files_f(child_l, arg_d)
@@ -132,7 +132,7 @@ def check_tess_f():
 
 # Make sure write to file is working
 def check_write_f():
-    test_loc = os.path.join(arg_d['output_loc'], 'rr_test_filename')
+    test_loc = os.path.join(arg_d['output_dir'], 'rr_test_filename')
     with open(test_loc, 'w', errors='replace') as output_file:
         output_file.write('TEST_TEXT')
 
@@ -144,7 +144,7 @@ def check_write_f():
         return True
     else:
         print('Can not read/write at output file location. Check the path and permissions.')
-        print('Output file location:', arg_d['output_loc'])
+        print('Output file location:', arg_d['output_dir'])
         return False
 
 
@@ -480,7 +480,7 @@ if __name__ == '__main__':
     arg_d = {
     'recursive': True,
     'noskip': False,
-    'output_loc': None,
+    'output_dir': None,
     'result_file_l': [],
     'leniency': 1
     }
@@ -523,10 +523,10 @@ if __name__ == '__main__':
 
 
     # Set output location if not specified
-    if not arg_d['output_loc']:
-        arg_d['output_loc'] = os.getcwd()
+    if not arg_d['output_dir']:
+        arg_d['output_dir'] = os.getcwd()
 
-    output_loc = os.path.join(arg_d['output_loc'], result_filename)
+    output_loc = os.path.join(arg_d['output_dir'], result_filename)
 
 
     print(json.dumps(arg_d, indent=4))
