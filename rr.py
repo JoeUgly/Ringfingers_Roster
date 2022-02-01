@@ -9,7 +9,6 @@ import sys
 import os
 import ntpath
 import cv2
-from PIL import Image, ImageStat, ImageOps
 from pytesseract import pytesseract
 import json
 import threading as mt
@@ -30,8 +29,9 @@ time_crop1_l = []
 
 
 # Phrases to remove from player names
-prefix_l = ['Phantom', 'Blue spirit', 'Blade of the Darkmoon', 'Dark spirit', 'Mad dark spirit', 'Aldrich Faithful', 'Loyal spirit, Aldrich Faithful', 'Watchdog of Farron', 'Loyal spirit, Watchdog of Farron', 'Invaded the world of', 'Invaded by dark spirit', 'Task completed.']
-suffix_l = ['summoned', 'has died', 'has returned home', 'summoned through concord!', 'invaded', ', disturber of sleep', 'has returned to their world']
+prefix_l = ['Phantom', 'Blue spirit', 'Blade of the Darkmoon', 'Dark spirit', 'Mad dark spirit', 'Aldrich Faithful', 'Loyal spirit, Aldrich Faithful', 'Watchdog of Farron', 'Loyal spirit, Watchdog of Farron', 'Task completed. Blade of the Darkmoon', 'Spear of the Church', 'Invaded the world of']
+suffix_l = ['summoned', 'has died', 'has returned home', 'summoned through concord!', 'summoned through concord', 'invaded', ', disturber of sleep', 'has returned to their world', 'has returned to their world.']
+no_suffix_l = ['Invaded the world of Host of Embers', 'Invaded by dark spirit', 'Invaded by mad dark spirit', 'Summoned to the world of Host of Embers', 'Invaded by Spear of the Church']
 
 
 
@@ -52,12 +52,12 @@ def get_files_f(arg_l, arg_d):
             elif item.startswith('--output='):
                 arg_d['output_loc'] = ''.join(item.split('--output=')[1:])
                 print('Option set: output location:', arg_d['output_loc'])
+            elif item == '--strict':
+                arg_d['leniency'] = 0
+                print('Option set: strict phrase matching')
             elif item == '--lenient':
-                arg_d['lenient'] = 1
+                arg_d['leniency'] = 2
                 print('Option set: lenient phrase matching')
-            elif item == '--verylenient':
-                arg_d['lenient'] = 2
-                print('Option set: very lenient phrase matching')
             else:
                 print('\nOption not recognized:', item)
 
@@ -72,11 +72,11 @@ def get_files_f(arg_l, arg_d):
         # File
         elif os.path.isfile(item):
             if os.access(item, os.R_OK):
-                if ntpath.basename(item).startswith(result_filename):
+                if ntpath.basename(item).startswith(result_filename.rsplit('.')[0]):  # Result file
                     arg_d['result_file_l'].append(item)
                     print('Result file detected:', item)
                 else:
-                    all_files_l.append(item)
+                    all_files_l.append(item)  # Video file
             else:
                 print('Error: File is not readable:', item)
 
@@ -112,11 +112,13 @@ def check_tess_f():
     else:
         print('Running as a script')
         # Uncomment next line and replace with your location of the Tesseract executable
-        pytesseract.tesseract_cmd = r"C:\Users\jschiffler\AppData\Local\Programs\Tesseract-OCR\tesseract.exe"
+        #pytesseract.tesseract_cmd = r"C:\Users\jhalb\AppData\Local\Programs\Tesseract-OCR\tesseract.exe"
 
     # Check if Tesseract is working
     try:
         pytesseract.get_tesseract_version()
+        lang_l = pytesseract.get_languages()
+        if 'eng' not in lang_l: raise Exception('eng.traineddata not found')
         print('Tesseract is working')
         os.environ['OMP_THREAD_LIMIT'] = '1'  # Use only one cpu core for Tesseract
         return True
@@ -149,13 +151,14 @@ def check_write_f():
 # Extract player names from text
 def clean_names_f(text):
     name = text  # This is needed for lenient matching
-    lenient_val = arg_d['lenient']  # Decrement this value to allow for 1 or 2 missing phrases
+    lenient_val = arg_d['leniency']  # Decrement this value to allow for 1 or 2 missing phrases
     try: 
 
-        # Host detection
-        if text.startswith('Invaded the world of Host of Embers'):
-            name = text.split('Invaded the world of Host of Embers', maxsplit=1)[1].strip()
-            return name
+        # No suffix phrases
+        for prefix in no_suffix_l:
+            if text.startswith(prefix):
+                name = text.split(prefix, maxsplit=1)[1].strip()
+                return name
 
         # Phantom prefix detection
         for prefix in prefix_l:
@@ -205,7 +208,7 @@ def add_names_f(name, video_path, name_d):
 
 # Save results to file
 def write_res_f(name_d):
-    json_results = json.dumps(name_d, indent=4)
+    json_results = json.dumps(name_d, indent=4, ensure_ascii=False)
     with open(output_loc, 'w', errors='replace') as output_file:
         output_file.write(json_results)
     return json_results
@@ -253,7 +256,7 @@ def get_frames_f(frame_queue, all_files_l):
             # Get frame data
             try:
                 vid_frame_total = vcap.get(7)  # Num of frames in video
-                if vid_frame_total < 0: raise
+                if vid_frame_total < 1: raise
                 frame_rate = round(vcap.get(5))  # FPS
                 frame_count_interval = round(frame_rate * 1.116666667)  # Select every 67th frame (on 60fps)
 
@@ -262,11 +265,11 @@ def get_frames_f(frame_queue, all_files_l):
                 continue
 
 
-            
+            '''
             breakpoint = 3000
             if vid_frame_total > breakpoint:
                 vid_frame_total = breakpoint
-            
+            '''
 
             print('fps:', frame_rate)
             video_duration = vid_frame_total / frame_rate
@@ -296,7 +299,9 @@ def get_frames_f(frame_queue, all_files_l):
                 try:
                     time_frame_read = time.time()
                     vid_frame_count += frame_count_interval  # Increment to next working frame
-                    vcap.set(1, vid_frame_count)  # 1 designates CAP_PROP_POS_FRAMES (which frame to read)
+                    check = vcap.set(1, vid_frame_count)  # 1 designates CAP_PROP_POS_FRAMES (which frame to read)
+                    if not check: raise
+
                     frame_na = vcap.read()[1][:, :, 0]  # Read nth frame # Remove color data
                     time_fr_l.append((time.time() - time_frame_read))
                     consec_err = 0
@@ -338,12 +343,6 @@ def get_frames_f(frame_queue, all_files_l):
 # Get frames from queue and process
 def process_frames_f(frame_queue, name_d):
     prev_video_path = None
-    
-
-    # Threshold for converting pixel to black or white
-    thresh = 60  # Higher values will give "thinner" text
-    temp_fn = lambda x : 255 if x > thresh else 0
-
 
     while True:
 
@@ -380,7 +379,6 @@ def process_frames_f(frame_queue, name_d):
                 break
 
 
-
         try:
 
             # Select area above nameplate text
@@ -393,16 +391,13 @@ def process_frames_f(frame_queue, name_d):
 
             crop_arr = frame_na[y1_coord:y2_coord, x1_coord:x2_coord]  # Crop Numpy array with index operator because it's faster
 
-            crop_img = Image.fromarray(crop_arr)  # Convert to PIL image
 
+            # Calculate average brightness
+            rms = crop_arr.mean()
 
-            # Calculate root mean square of brightness
-            stat = ImageStat.Stat(crop_img)
-            rms = stat.mean[0]
-            #print('rms:', rms)
 
             # Skip if too dark or too bright, ie: nameplate not detected
-            if rms < 11 or rms > 14:
+            if rms < 11 or rms > 14:  # Actual values: 12.46, 13.12
                 continue
 
 
@@ -412,20 +407,10 @@ def process_frames_f(frame_queue, name_d):
             y2_coord = int(height * .73)
             crop_arr = frame_na[y1_coord:y2_coord, x1_coord:x2_coord]
 
-            #crop_img = Image.fromarray(crop_arr)
 
-            # Reduce noise by converting to only black or white
-            time_crop1 = time.time()
-            #crop_img = crop_img.convert('L').point(temp_fn, mode='1')
-            #crop_img = crop_img.convert('L').point(temp_fn, mode='L')
-            time_crop1_l.append(time.time() - time_crop1)
+            #time_crop1 = time.time()
+            #time_crop1_l.append(time.time() - time_crop1)
             
-            #crop_img = ImageOps.invert(crop_img)  # Tesseract expects dark text on light background. Slightly faster than tesseract inverting
-
-            time_crop2_l.append((time.time() - time_crop2))
-
-            #crop_img.show()  # will need? pip install opencv-python
-
 
             # Get text from image, don't invert, whitelist ASCII chars, expect one line of text
             t4 = time.time()
@@ -492,7 +477,7 @@ if __name__ == '__main__':
     'noskip': False,
     'output_loc': False,
     'result_file_l': [],
-    'lenient': 0
+    'leniency': 1
     }
 
     result_filename = 'ds3_rr_results.txt'
@@ -592,9 +577,10 @@ if __name__ == '__main__':
     print('frame read ave:', sum(time_fr_l) / len(time_fr_l))
     print('img convert ave:', sum(time_crop1_l) / len(time_crop1_l))
     print('OCR read ave:', sum(time_tess_l) / len(time_tess_l))
-    print('\nVersion: 0.1.0-alpha')
+    print('\nVersion: 0.1.0-beta')
 
     input('END')
+
 
 
 
