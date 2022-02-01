@@ -61,9 +61,12 @@ def get_files_f(arg_l, arg_d):
 
         # Directory
         elif os.path.isdir(item):
-            if arg_d['recursive'] or arg_d['first_dir'] == 'first':
-                if arg_d['first_dir'] == 'first':
-                    arg_d['first_dir'] = item
+            if arg_d['recursive'] or not arg_d['output_loc']:
+                if not arg_d['output_loc']:  # Set first dir
+                    arg_d['output_loc'] = item
+                elif not os.path.abspath(item) in os.path.abspath(arg_d['output_loc']):  # Is not child dir
+                    arg_d['output_loc'] = os.getcwd()  # Use PWD as output location when multi dirs are invoked
+                    
                 child_l = [os.path.join(item, child) for child in os.listdir(item)]  # List of items in dir
                 get_files_f(child_l, arg_d)  ## does this need to return a new arg_d? arg_d = get_files_f(child_l, arg_d)
 
@@ -476,9 +479,8 @@ if __name__ == '__main__':
     # Default options
     arg_d = {
     'recursive': True,
-    'first_dir': 'first',
     'noskip': False,
-    'output_loc': False,
+    'output_loc': None,
     'result_file_l': [],
     'leniency': 1
     }
@@ -522,10 +524,7 @@ if __name__ == '__main__':
 
     # Set output location if not specified
     if not arg_d['output_loc']:
-        if arg_d['first_dir'] != 'first':  # Use first specified dir
-            arg_d['output_loc'] = arg_d['first_dir']
-        else:
-            arg_d['output_loc'] = default_path  # Use script or exe dir
+        arg_d['output_loc'] = os.getcwd()
 
     output_loc = os.path.join(arg_d['output_loc'], result_filename)
 
