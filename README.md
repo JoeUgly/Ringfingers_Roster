@@ -50,8 +50,7 @@ You know you fought this person before, but you don't want to manually look thro
 ## Getting Started
 ### Recommended method
 The easiest way to run this program is to use one of the "frozen" executables.\
-Windows 10: \
-Windows 11: \
+Windows 10 & 11: \
 Linux Ubuntu: 
 
 These executables will contain the Python interpreter, the Python script, and all the dependencies.
@@ -62,7 +61,7 @@ Simply place the executable file in the same folder as your videos and double cl
 <br/><br/>
 Alternatively, you can run the executable file from a CLI.\
 Example:\
-`C:\Users\jugly\Desktop\Downloads\rr.exe C:\Users\jugly\Desktop\DS3Videos\`
+`C:\Users\jugly\Desktop\Downloads\ds3_rr.exe C:\Users\jugly\Desktop\DS3Videos\`
 
 If no video folder is given, then it defaults to the folder containing the executable file.
 
@@ -70,7 +69,7 @@ Running from a CLI may be mandatory on some systems (Linux).
 
 <br/><br/>
 #### Manual method
-If you are not using one of the platforms listed above, then you'll need to fullfill the prerequisites manually.\
+If you are not using one of the platforms listed above, then you'll need to fulfill the prerequisites manually.\
 See the [Manual installation method](https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/blob/main/Advanced_Usage.md#Manual-installation-method) section of the Advanced Usage document.
 
 <br/><br/>
@@ -91,7 +90,7 @@ If any part of the nameplate animation is missing from the video, then this prog
 #### Message too long 
 Some messages can be so long that they extend past the edge of the nameplate and therefore not detected. This can be alleviated with the `--lenient` option. [See below.](#Misinterpreted-characters-in-prefix-or-suffix)
 
-Some messages consist of two lines and therefore the useful text is not in the excpected location and also not detected. An option to expand the search area for text may be included in a future version.
+Some messages consist of two lines and therefore the useful text is not in the expected location and also not detected. An option to expand the search area for text may be included in a future version.
 
 
 <br/><br/>
@@ -129,7 +128,7 @@ Example:\
 `C:\Users\jugly\Desktop\Downloads\rr.exe --lenient C:\Users\jugly\Desktop\DS3Videos\`
 
 The `--lenient` option will allow more entries into the output file, many of which will be false positives.\
-If you want to maximise the chances of detecting a player's name and you are not concerned about a bloated output file, then use this option.
+If you want to maximize the chances of detecting a player's name and you are not concerned about a bloated output file, then use this option.
 
 Conversely, if you feel that there are too many erroneous entries in the result file, then use the `--strict` option.\
 Note: A single misinterpreted character in either the prefix or suffix will cause the frame (and name) to be discarded.
@@ -139,7 +138,8 @@ Note: A single misinterpreted character in either the prefix or suffix will caus
 ## FAQ
 
 #### What video formats are allowed?
-Anything that OpenCV can read.
+Each video must have a file extension known to be a video format.\
+Your video formats are also limited to what OpenCV can read.
 
 Any file which does not begin with `ds3_rr_results` will be assumed to be a video. This program should identify errors related to trying to read a non-video file and skip to the next file.
 
@@ -148,10 +148,10 @@ Any file which does not begin with `ds3_rr_results` will be assumed to be a vide
 #### How can I skip some files in a folder?
 Use your CLI's glob / wildcard capabilities.\
 Example using Windows PowerShell to select only MP4 files:\
-`python C:\Users\jhalb\Downloads\ds3_rc.py $(dir C:\Users\jhalb\Videos\*.mp4)`
+`python C:\Users\jhalb\Downloads\ds3_rr.py $(dir C:\Users\jhalb\Videos\*.mp4)`
 
 Example using Bash to select only MP4 files:\
-`python3 /home/jhalb/code/ds3_rc.py /home/jhalb/videos/*.mp4`
+`python3 /home/jhalb/code/ds3_rr.py /home/jhalb/videos/*.mp4`
 
 
 <br/><br/>
