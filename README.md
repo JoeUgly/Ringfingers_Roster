@@ -88,6 +88,8 @@ Example:
 
 A video resolution of 720p is the minimum needed for acceptable quality of results. 1080p is much better.
 
+Currently limited to only the Latin alphabet / ASCII printable characters.
+
 
 <br/><br/>
 #### Misinterpreted characters in prefix or suffix
