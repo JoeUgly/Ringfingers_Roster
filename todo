@@ -221,6 +221,18 @@ high: 13.112666573338933
 low: 12.468651880887148
 
 
+pyinstaller.exe .\test.py -y --onefile --add-data "C:\Users\jschiffler\AppData\Local\Programs\Tesseract-OCR;joejoe" --upx-dir=C:\Users\jschiffler\Downloads\upx-3.96-win32\
+
+pyinstaller -y --clean --onefile C:\Users\jschiffler\Desktop\test\rr.py --add-data "C:\Users\jschiffler\AppData\Local\Programs\Tesseract-OCR;tess"
+
+pyinstaller -y --clean --onefile C:\Users\jschiffler\Desktop\test\rr.py --add-data "C:\Users\jschiffler\AppData\Local\Programs\Tesseract-OCR;tess" --upx-dir=C:\Users\jschiffler\Downloads\upx-3.95-win64\
+134 to 119
+~ 12%
+
+startup 10 to 13.5
+~ 35%
+
+
 
 
 3801.325937986374
