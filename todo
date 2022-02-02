@@ -9,7 +9,6 @@ test all options
 output location: if multi dirs then use cwd
 output file is written only after successful video processing. if all vids are skipped then no output unless you want to add another write in main
 test output location is dir?
-how handle adding grand totals on error
 use quotes in examples?
 perf example
 ubuntu 1804?
@@ -49,6 +48,7 @@ Advanced features
 
 
 later:
+how handle adding grand totals on error
 trailing exclam mark sometimes
 detect some common words like "summon" and "darkmoon" to help with long messages
 fallback to different video capture on opencv error
