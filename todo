@@ -5,28 +5,17 @@
 
 # To do:
 
-actually needs to be done:
 test all options
 output location: if multi dirs then use cwd
 output file is written only after successful video processing. if all vids are skipped then no output unless you want to add another write in main
 test output location is dir?
 how handle adding grand totals on error
-replace rc with rr in docs. check all filenames
-spellcheck
-use quotes in examples
+use quotes in examples?
 perf example
-if mimetypes.guess_type('file_path')[0].startswith('video'):
-
-skip invoking file
-exclude all exe files? only rr file? sys.argv[0]
 ubuntu 1804?
 test on manjaro
 test mulit instances
-which char can be in name - must allow pc player names
-latin alphabet only
-actual highest lowest nameplate brightness
-high: 13.112666573338933
-low: 12.468651880887148
+test with thresh
 
 
 promote
@@ -37,21 +26,37 @@ promote
     ask about video organization
 
 
-problem vids:
-3lade of the Darkmoon Anubis_God01 summoned through concord: /home/joepers/Videos/DS3/all/DARK SOULS™ III_ The Fire Fades™ Edition_20200916210007.mp4
-shadow_4_1: "/home/joepers/Videos/DS3/2v1/DARK SOULS™ III_ The Fire Fades™ Edition_20200217225510.mp4"
 
 
-does thresh improve text - no. test again
+Phase 1:
+Basic features
 
-disable/ new tess word dict
-https://tesseract-ocr.github.io/tessdoc/tess3/ControlParams.html
-https://github.com/tesseract-ocr/tesseract/blob/main/doc/tesseract.1.asc#config-files-and-augmenting-with-user-data
+Beta Release
+
+Compatibility / Bug fixes
+
+Stable Release
+
+Phase 2:
+Quality of results
+
+Phase 3:
+Performance
+
+Phase 4:
+Advanced features
+
 
 
 later:
 trailing exclam mark sometimes
 detect some common words like "summon" and "darkmoon" to help with long messages
+fallback to different video capture on opencv error
+
+new tess word dict
+https://tesseract-ocr.github.io/tessdoc/tess3/ControlParams.html
+https://github.com/tesseract-ocr/tesseract/blob/main/doc/tesseract.1.asc#config-files-and-augmenting-with-user-data
+
 sort result file
 "~" doesnt work in output arg
 
@@ -59,6 +64,10 @@ import ntpath
 only available on?
 
 
+
+problem vids:
+3lade of the Darkmoon Anubis_God01 summoned through concord: /home/joepers/Videos/DS3/all/DARK SOULS™ III_ The Fire Fades™ Edition_20200916210007.mp4
+shadow_4_1: "/home/joepers/Videos/DS3/2v1/DARK SOULS™ III_ The Fire Fades™ Edition_20200217225510.mp4"
 
 
 
@@ -77,8 +86,8 @@ only available on?
 #       decord: high mem usage, not faster
 #       imageio: similar speed
 #       ffmpeg: confusing, weird format
-# Batch processing with a single file containing the list of multiple image file paths
-# print(pytesseract.image_to_string('images.txt'))
+# Batch processing with a single file containing the list of multiple image file paths. cant find way without writing filenames to file. separated by newline
+# tess fast traineddata only works on 4.0
 
 # accuracy
 #   train with font
@@ -90,8 +99,7 @@ only available on?
 fps check
 
 # misc:
-# text cleanup +
-# these chars are detected: ¥, \n, |
+# text cleanup
 # more benchmarking
 # write output after every video +
 config file?
@@ -100,20 +108,17 @@ single char args options
 # options:
 # double confirm names -
 # check only part of vid. ex: first or last minute
-# loose phrase matching +
-#   double lenient +
-#   should loose be default?
+# phrase matching +
 # verbose / benchmarking
 # dup: exclude vid name or path? +
 # output location +
-#   user specified, then first dir, then cwd
-#   use dir script is in not cwd: os.path.realpath(__file__)
+
 
 
 # concerns:
 # Task completed is two lines of text. vert crop position is wrong. can expand text crop area. make this an option
 # long names can cause text to go beyond nameplate. ignore. very lenient will still catch
-# newline char in player name will cause json error
+# newline char in player name will cause json error -
 # get_args_f return arg_d?
 
 
@@ -209,6 +214,11 @@ waiting on read frame
 720
 7: 60
 -: 177
+
+
+actual highest lowest nameplate brightness
+high: 13.112666573338933
+low: 12.468651880887148
 
 
 
