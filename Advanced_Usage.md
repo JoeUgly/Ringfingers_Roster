@@ -16,11 +16,11 @@
 ## Manual installation method
 1\. Install Python version 3.6+. [Available here](https://www.python.org/downloads/)
 
-2\. Install the following Python packages: pytesseract, opencv-python, Pillow\
+2\. Install the following Python packages: pytesseract, opencv-python\
 Example:\
-`pip install pytesseract opencv-python-headless Pillow`
+`pip install pytesseract opencv-python-headless`
 
-3\. Install Tesseract-OCR (version 5.0+ is strongly reccomemended)\
+3\. Install Tesseract-OCR (version 5.0+ is strongly recommended)\
 Windows: [Available here](https://github.com/UB-Mannheim/tesseract/wiki)\
 Linux: [Available here](https://tesseract-ocr.github.io/tessdoc/Home.html#binaries)
 
@@ -30,7 +30,7 @@ sudo add-apt-repository ppa:alex-p/tesseract-ocr-devel
 sudo apt-get install tesseract-ocr
 ```
 
-4\. Download the latest RR script located at: /releases/ds3_rc.py??
+4\. Download the latest RR script located at: /releases/ds3_rr.py??
 
 5\. Add the tesseract executable ##(dir?) to your PATH or state it in the rr python script
 
@@ -40,7 +40,7 @@ sudo apt-get install tesseract-ocr
 <br/><br/>
 To run the program, invoke the Python script from a CLI along with the folder(s) containing your videos.\
 Example:\
-`python C:\Users\Jugly\Downloads\ds3_rc.py C:\Users\Jugly\Videos\DS3\`
+`python C:\Users\Jugly\Downloads\ds3_rr.py C:\Users\Jugly\Videos\DS3\`
 
 If no video folder is given, then it defaults to the folder containing the RR script.
 
@@ -51,8 +51,8 @@ The following can be given as arguments:
 
 `--nonrecursive` &emsp;&emsp; Do not search directories recursively. [See Input](#Input)\
 `--noskip` &emsp;&emsp;&emsp;&emsp;&emsp;Do not skip files if they have the same filename. [See Skip duplicates](#Skip-duplicates)\
-`--lenient`&emsp;&emsp;&emsp;&emsp;&emsp;Attempt name extraction if a prefix or suffix is missing. [See Readme](https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/blob/main/README.md#Misinterpreted-characters-in-prefix-or-suffix)\
-`--verylenient`&emsp;&emsp;&emsp;Attempt name extraction if both the prefix and suffix are missing. [See Readme](https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/blob/main/README.md#Misinterpreted-characters-in-prefix-or-suffix)\
+`--strict`&emsp;&emsp;&emsp;&emsp;&emsp;Attempt name extraction only if a prefix and suffix are found. [See Readme](https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/blob/main/README.md#Misinterpreted-characters-in-prefix-or-suffix)\
+`--lenient`&emsp;&emsp;&emsp;Attempt name extraction if both the prefix and suffix are missing. [See Readme](https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/blob/main/README.md#Misinterpreted-characters-in-prefix-or-suffix)\
 `--output=`&emsp;&emsp;&emsp;&emsp;&emsp;Specify the location of the output (result) file. [See Output](#Output)
 
 
@@ -77,7 +77,7 @@ Directory searches are recursive by default. Disable this with the `--nonrecursi
 Only directories given AFTER the --nonrecursive option will be nonrecursive.
 
 Example:\
-`python C:\Users\jhalb\Downloads\ds3_rc.py C:\Users\jhalb\folder_1\ --nonrecursive C:\Users\jhalb\folder_2\`\
+`python C:\Users\jhalb\Downloads\ds3_rr.py C:\Users\jhalb\folder_1\ --nonrecursive C:\Users\jhalb\folder_2\`\
 Only folder_1 will be searched recursively.
 
 
@@ -98,7 +98,7 @@ Example result (output) file:
 <br/><br/>
 To specify the output file location use the `--output` option.\
 Example:\
-`python ds3_rc.py /path/to/videos/ --output=/path/to/documents/`
+`python ds3_rr.py /path/to/videos/ --output=/path/to/documents/`
 
 If no location is specified, then the video directory will be used.\
 If no video directory is specified, then the directory containing the Python script will be used for input and output.
@@ -119,9 +119,9 @@ Place the result file in the same directory as the videos you are processing.
 
 Alternatively, you can explicitly give the absolute path of the result file as an argument.\
 Example:\
-`python ds3_rc.py /path/to/videos/ /path/to/ds3_rc_results.txt`
+`python ds3_rr.py /path/to/videos/ /path/to/ds3_rr_results.txt`
 
-The results filename must begin with "ds3_rc_results".\
+The results filename must begin with "ds3_rr_results".\
 You can [merge multiple result files](#Merge-multiple-result-files-together).
 
 
@@ -154,12 +154,12 @@ Surprisingly, the biggest bottleneck in this program is opening and reading a fr
 To speed up this process:\
 Move half of your videos to a different directory. Run an instance of this program on each directory.\
 Example:\
-`python3 ds3_rc.py /path/to/dir_1`
+`python3 ds3_rr.py /path/to/dir_1`
 
 (Simultaneously in another shell)\
-`python3 ds3_rc.py /path/to/dir_2`
+`python3 ds3_rr.py /path/to/dir_2`
 
-You can increase the number of directories and instances until your CPU usage is maximised.
+You can increase the number of directories and instances until your CPU usage is maximized.
 
 This will create two separate result files. See [Merge result files](#Merge-multiple-result-files-together)
 
@@ -184,7 +184,7 @@ If you have any suggestions, please let me know.
 ### Whitespace in file path
 If there is a space character in your filename or path, then surround it with quotes.\
 Example:\
-`.\rr.exe DS3Videos\ --outout="C:\Users\name with spaces\Desktop"`
+`.\ds3_rr.exe DS3Videos\ --output="C:\Users\name with spaces\Desktop"`
 
 
 <br/><br/>
@@ -192,7 +192,7 @@ Example:\
 This program is expected to work on Ubuntu 20.04 and newer. Similar distros should work, but have not been tested.\
 If you get an error similar to this:
 `[13268] Error loading Python lib '/tmp/_MEIKPWmtg/libpython3.8.so.1.0': dlopen: /lib/x86_64-linux-gnu/libm.so.6: version 'GLIBC_2.29' not found (required by /tmp/_MEIKPWmtg/libpython3.8.so.1.0)`\
-It probably means your distro is too old. Either upgrade, use the manuall installation method, or let me know and I could make a version for you.
+It probably means your distro is too old. Either upgrade, use the manual installation method, or let me know and I could make a version for you.
 
 
 <br/><br/>
@@ -201,11 +201,11 @@ If you get an error similar stating something like `Failed to extract ... decomp
 Compare the values from the checksum file to make sure your file is not corrupted. A checksum file is included in each release.
 
 Example using Powershell:\
-`Get-FileHash rr.exe`\
+`Get-FileHash ds3_rr.exe`\
 Example using CMD:\
-`certutil -hashfile rr.exe sha256`\
+`certutil -hashfile ds3_rr.exe sha256`\
 Example using Bash:\
-`sha256sum rr`
+`sha256sum ds3_rr`
 
 
 <br/><br/>
@@ -247,6 +247,7 @@ When both threads conclude, the results and stats are displayed.
 
 
 <br/><br/>
+
 
 
 
