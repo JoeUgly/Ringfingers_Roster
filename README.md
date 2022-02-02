@@ -6,26 +6,6 @@
 
 
 
-Phase 1:
-Basic features
-
-Beta Release
-
-Compatibility / Bug fixes
-
-Stable Release
-
-Phase 2:
-Quality of results
-
-Phase 3:
-Performance
-
-Phase 4:
-Advanced features
-
-
-
 <br/><br/>
 ### Table of Contents
 * [Summary](#Summary)
