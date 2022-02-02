@@ -125,7 +125,7 @@ This behavior can be changed by invoking the `--strict` or `--lenient` options.\
 Using `--strict` will not extract a player name, unless both a prefix and a suffix is detected.\
 Using `--lenient` will extract a player name, even if both the prefix and suffix are not detected.\
 Example:\
-`C:\Users\jugly\Desktop\Downloads\rr.exe --lenient C:\Users\jugly\Desktop\DS3Videos\`
+`C:\Users\jugly\Desktop\Downloads\ds3_rr.exe --lenient C:\Users\jugly\Desktop\DS3Videos\`
 
 The `--lenient` option will allow more entries into the output file, many of which will be false positives.\
 If you want to maximize the chances of detecting a player's name and you are not concerned about a bloated output file, then use this option.
