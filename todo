@@ -21,6 +21,7 @@ bitrate per frame: vcap.get(47) / vcap.get(5)
 cv2.setNumThreads(n)
 fallback to default number on unimportant errors like framerate?
 print start file for both procs?
+time.perf_counter()
 
 
 promote
