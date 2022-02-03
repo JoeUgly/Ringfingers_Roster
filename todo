@@ -3,25 +3,26 @@
 #720/1080 '/home/joepers/Videos/DS3/all/DARK SOULS™ III_ The Fire Fades™ Edition_20200916210007.mp4' '/home/joepers/Videos/DS3/all/DARK SOULS™ III_ The Fire Fades™ Edition_20210104173816.webm'
 
 
-# To do:
+# To do Beta:
 
 test all options
-output location: if multi dirs then use cwd
-output file is written only after successful video processing. if all vids are skipped then no output unless you want to add another write in main
 test output location is dir?
-use quotes in examples?
-perf example
-ubuntu 1804?
-test on manjaro
 test mulit instances
 test with thresh
 test more video formats
-get res or bitrate of video. include in benchmark
-bitrate per frame: vcap.get(47) / vcap.get(5)
-cv2.setNumThreads(n)
+get res or bitrate of video. include in benchmark +
+perf example
+cv2.setNumThreads(n) +
+
+
+# To do Stable:
+ubuntu 1804?
+test on manjaro
+use quotes in examples?
+attempt locate tess exe? os.path.expanduser("~")
 fallback to default number on unimportant errors like framerate?
-print start file for both procs?
 time.perf_counter()
+
 
 
 promote
@@ -58,6 +59,7 @@ later:
 how handle adding grand totals on error
 trailing exclam mark sometimes
 detect some common words like "summon" and "darkmoon" to help with long messages
+test perf of taller text box
 fallback to different video capture on opencv error
 
 new tess word dict
