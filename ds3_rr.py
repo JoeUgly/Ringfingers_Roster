@@ -250,10 +250,8 @@ def get_frames_f(frame_queue, all_files_l):
                 checked_files_l.append(video_name)
 
 
-            # Read video
-            print('\n Starting file:', video_path)
-            
             # Check if file is a video
+            print('\n Reading file:', video_path)
             mimetype_res = mimetypes.guess_type(video_path)[0]
             if not mimetype_res or not mimetype_res.startswith('video'):
                 print('File MIME type detected as non-video. Skipping:', video_name, mimetype_res)
@@ -262,9 +260,9 @@ def get_frames_f(frame_queue, all_files_l):
             # Set video capture
             try:
                 vid_frame_count = 0
-                time_vcap = time.time()
+                time_vcap = time.perf_counter()
                 vcap = cv2.VideoCapture(video_path)
-                time_vcap_l.append((time.time() - time_vcap))
+                time_vcap_l.append((time.perf_counter() - time_vcap))
                 if not vcap.isOpened(): raise
 
             except:
@@ -314,13 +312,13 @@ def get_frames_f(frame_queue, all_files_l):
 
                 # Read frame
                 try:
-                    time_frame_read = time.time()
+                    time_frame_read = time.perf_counter()
                     vid_frame_count += frame_count_interval  # Increment to next working frame
                     check = vcap.set(1, vid_frame_count)  # 1 designates CAP_PROP_POS_FRAMES (which frame to read)
                     if not check: raise
 
                     frame_na = vcap.read()[1][:, :, 0]  # Read nth frame # Remove color data
-                    time_fr_l.append((time.time() - time_frame_read))
+                    time_fr_l.append((time.perf_counter() - time_frame_read))
                     consec_err = 0
                 except Exception as errex:
                     print('__Error trying to read frame:', errex, video_name)
@@ -348,11 +346,11 @@ def get_frames_f(frame_queue, all_files_l):
             print(errex, sys.exc_info()[2].tb_lineno)
 
 
-    # End of all videos
+    # Close thread on end of all videos
     with q_lock:
         frame_queue.put((False, frame_gt, duration_gt), block=True)
 
-    print('\nEnd of get_frames_f')
+    print('\nEnd of video frames')
 
 
 
@@ -386,20 +384,23 @@ def process_frames_f(frame_queue, name_d):
             # Append completed video name to name_d
             if prev_video_path:  # Skip first video
                 name_d["  ALL  "].append(prev_video_path)  # Add video to ALL key
-                json_results = write_res_f(name_d)  # Save new results file
+                write_res_f(name_d)  # Save new results file
 
             prev_video_path = video_path
 
-            # No more videos
-            if video_path == False:
+            # Close thread on no more videos
+            if not video_path:
                 frame_queue.put((q_ret_t[1], q_ret_t[2]))
                 break
+
+            print('\n Begin processing:', video_path)
 
 
         try:
 
             # Select area above nameplate text
             # Crop as percent so unaffected by resolution
+            time_crop = time.perf_counter()
             height, width = frame_na.shape[:2]
             x1_coord = int(width * .29)
             x2_coord = int(width * .71)
@@ -419,18 +420,17 @@ def process_frames_f(frame_queue, name_d):
 
 
             # Reuse x coords for text crop
-            #time_crop = time.time()
-            y1_coord = int(height * .69)
+            y1_coord = int(height * .69)  ##
             y2_coord = int(height * .73)
             crop_arr = frame_na[y1_coord:y2_coord, x1_coord:x2_coord]
-            #time_crop_l.append(time.time() - time_crop)
+            time_crop_l.append(time.perf_counter() - time_crop)
             
 
             # Get text from image, don't invert, whitelist ASCII chars, expect one line of text
-            t4 = time.time()
+            t4 = time.perf_counter()
             text = pytesseract.image_to_string(crop_arr, timeout=5, config='''-c tessedit_do_invert=1 -c tessedit_char_whitelist="!\\"#$%&\\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ " --psm 7 --oem 1''').strip()
 
-            time_tess_l.append((time.time() - t4))
+            time_tess_l.append((time.perf_counter() - t4))
 
 
             # Check for phrases and extract player names
@@ -448,7 +448,7 @@ def process_frames_f(frame_queue, name_d):
             print(errex, sys.exc_info()[2].tb_lineno)
 
 
-    print('\nEnd of process_frames_f')
+    print('\nEnd of processing videos')
 
 
 # Display progress
@@ -563,12 +563,13 @@ if __name__ == '__main__':
 
 
     # Write and display results
-    print(json.dumps(name_d, indent=4))
+    json_results = write_res_f(name_d)
+    print(json_results)
     print('\n\n\n\t-------- Complete. --------\n\nOutput file saved at:', output_loc, '\n\n')
 
 
     # Prevent divide by zero error
-    for each_l in [time_crop_l, time_vcap_l, time_fr_l, time_tess_l, kbit_per_frame_l]:
+    for each_l in [time_vcap_l, time_fr_l, time_crop_l, time_tess_l, kbit_per_frame_l]:
         if not each_l:
             each_l.append(0)
 
@@ -583,6 +584,7 @@ if __name__ == '__main__':
     print('Ave kbits per sec:', round((sum(kbit_per_frame_l) / len(kbit_per_frame_l)) / duration))
     print('video capture ave:', sum(time_vcap_l) / len(time_vcap_l))
     print('frame read ave:', sum(time_fr_l) / len(time_fr_l))
+    print('time_crop_l ave:', sum(time_crop_l) / len(time_crop_l))
     print('OCR read ave:', sum(time_tess_l) / len(time_tess_l))
     print('\nVersion: 0.2.0-beta')
 
