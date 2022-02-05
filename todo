@@ -4,15 +4,14 @@
 
 
 # To do Beta:
-
 test all options
-test output location is dir?
-test mulit instances
-test with thresh
+test multi instances
 test more video formats
-get res or bitrate of video. include in benchmark +
+detect some common words like "summon" and "darkmoon" to help with long messages
+test perf of taller text box. high text will prob sccrew up rms
+rosaria finger
 perf example
-cv2.setNumThreads(n) +
+doc cleanup
 
 
 # To do Stable:
@@ -22,8 +21,10 @@ test on manjaro
 use quotes in examples?
 attempt locate tess exe? os.path.expanduser("~")
 fallback to default number on unimportant errors like framerate?
-detect some common words like "summon" and "darkmoon" to help with long messages
-test perf of taller text box
+refactor main
+test with thresh
+cv2.setNumThreads(n) +
+trailing exclam mark sometimes
 
 
 
@@ -40,11 +41,11 @@ promote
 Phase 1:
 Basic features
 
-Beta Release
+Beta Release: 2/6
 
 Compatibility / Bug fixes
 
-Stable Release
+Stable Release: 2/13
 
 Phase 2:
 Quality of results
@@ -59,14 +60,13 @@ Advanced features
 
 later:
 how handle adding grand totals on error
-trailing exclam mark sometimes
 fallback to different video capture on opencv error
 
 new tess word dict
 https://tesseract-ocr.github.io/tessdoc/tess3/ControlParams.html
 https://github.com/tesseract-ocr/tesseract/blob/main/doc/tesseract.1.asc#config-files-and-augmenting-with-user-data
 
-sort result file
+sort result file. current sort is order they were found
 "~" doesnt work in output arg
 
 import ntpath
