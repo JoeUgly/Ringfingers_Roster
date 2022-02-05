@@ -6,14 +6,14 @@
 # To do Beta:
 test all options
 test multi instances
-test more video formats
-detect some common words like "summon" and "darkmoon" to help with long messages
-test perf of taller text box. high text will prob sccrew up rms
 doc cleanup
 tested formats: webm (vp9), mkv (h264), mp4 (mov), mov (h264), wmv (wmv2), flv (flv1)
 
 
 # To do Stable:
+test perf of taller text box. high text will prob screw up rms and psm
+detect some common words like "summon" and "darkmoon" to help with long messages
+test more video formats
 result file doesnt consider diff options: run program as strict. run again as lenient. program will pick up result file and skip videos.
 ubuntu 1804?
 test on manjaro
