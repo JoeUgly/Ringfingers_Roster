@@ -9,9 +9,9 @@ test multi instances
 test more video formats
 detect some common words like "summon" and "darkmoon" to help with long messages
 test perf of taller text box. high text will prob sccrew up rms
-rosaria finger
 perf example
 doc cleanup
+tested formats: webm (vp9), mkv (h264), mp4 (mov), mov (h264), wmv (wmv2), flv (flv1)
 
 
 # To do Stable:
@@ -61,6 +61,8 @@ Advanced features
 later:
 how handle adding grand totals on error
 fallback to different video capture on opencv error
+verbose option
+overwrite progress
 
 new tess word dict
 https://tesseract-ocr.github.io/tessdoc/tess3/ControlParams.html
