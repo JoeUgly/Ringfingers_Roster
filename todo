@@ -16,6 +16,7 @@ cv2.setNumThreads(n) +
 
 
 # To do Stable:
+result file doesnt consider diff options: run program as strict. run again as lenient. program will pick up result file and skip videos.
 ubuntu 1804?
 test on manjaro
 use quotes in examples?
