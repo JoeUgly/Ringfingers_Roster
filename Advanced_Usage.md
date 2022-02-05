@@ -51,7 +51,7 @@ The following can be given as arguments:
 
 `--nonrecursive` &emsp;&emsp; Do not search directories recursively. [See Input](#Input)\
 `--noskip` &emsp;&emsp;&emsp;&emsp;&emsp;Do not skip files if they have the same filename. [See Skip duplicates](#Skip-duplicates)\
-`--strict`&emsp;&emsp;&emsp;&emsp;&emsp;Attempt name extraction only if a prefix and suffix are found. [See Readme](https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/blob/main/README.md#Misinterpreted-characters-in-prefix-or-suffix)\
+`--strict`&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Attempt name extraction only if a prefix and suffix are found. [See Readme](https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/blob/main/README.md#Misinterpreted-characters-in-prefix-or-suffix)\
 `--lenient`&emsp;&emsp;&emsp;&emsp;&emsp;Attempt name extraction if both the prefix and suffix are missing. [See Readme](https://github.com/JoeUgly/Dark_Souls_3_Roll_Call/blob/main/README.md#Misinterpreted-characters-in-prefix-or-suffix)\
 `--output=`&emsp;&emsp;&emsp;&emsp;&emsp;Specify the location of the output (result) file. [See Output](#Output)
 
