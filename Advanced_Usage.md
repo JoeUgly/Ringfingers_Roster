@@ -24,7 +24,7 @@ Example:\
 Windows: [Available here](https://github.com/UB-Mannheim/tesseract/wiki)\
 Linux: [Available here](https://tesseract-ocr.github.io/tessdoc/Home.html#binaries)
 
-I used the following to easily install Tesseract 5.0 on Ubuntu:\
+I used the following to easily install Tesseract 5.0 on Ubuntu:
 ```
 sudo add-apt-repository ppa:alex-p/tesseract-ocr-devel
 sudo apt-get install tesseract-ocr
