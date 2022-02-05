@@ -150,6 +150,9 @@ The speed at which this occurs is mostly dependent on your CPU and the video res
 
 Surprisingly, the biggest bottleneck in this program is opening and reading a frame. On my Ryzen 2200G, just reading the frame data is much slower than playback speed. I suspect this is due to a lack of hardware acceleration.
 
+[Check here for typical processing speeds](https://github.com/JoeUgly/Ringfingers_Roster/discussions/3)
+
+
 <br/><br/>
 To speed up this process:\
 Move half of your videos to a different directory. Run an instance of this program on each directory.\
