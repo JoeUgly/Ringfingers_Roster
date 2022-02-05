@@ -62,20 +62,26 @@ def get_files_f(arg_l, arg_d):
 
         # Directory
         elif os.path.isdir(item):
-            if arg_d['recursive'] or not arg_d['output_dir']:
-                if not arg_d['explicit_output']:
-                    if not arg_d['output_dir']:  # Set first dir
-                        arg_d['output_dir'] = item
-                    elif not os.path.abspath(arg_d['output_dir']) in os.path.abspath(item):  # Is not child dir
-                        arg_d['output_dir'] = os.getcwd()  # Use CWD as output location when multi dirs are invoked
+
+            # Set output location based on input
+            if not arg_d['explicit_output']:  # Set output dir if not explicitly stated
+                if not arg_d['output_dir']:  # Output not set
+                    arg_d['output_dir'] = item  # Use first dir
                     
+                elif not os.path.abspath(arg_d['output_dir']) in os.path.abspath(item):  # Change output from first dir to CWD if not child dir
+                    arg_d['output_dir'] = os.getcwd()  # Use CWD as output location when multi dirs are invoked
+
+            # Gather sub dirs only when recursive
+            if arg_d['recursive']:
                 child_l = [os.path.join(item, child) for child in os.listdir(item)]  # List of items in dir
-                get_files_f(child_l, arg_d)  ## does this need to return a new arg_d? arg_d = get_files_f(child_l, arg_d)
+            else:
+                child_l = [os.path.join(item, child) for child in os.listdir(item) if os.path.isfile(os.path.join(item, child))]  # List of files in dir
+            get_files_f(child_l, arg_d)  ## does this need to return a new arg_d? arg_d = get_files_f(child_l, arg_d)
 
         # File
         elif os.path.isfile(item):
             if os.access(item, os.R_OK):
-                if ntpath.basename(item).startswith(result_filename.rsplit('.')[0]):  # Result file
+                if ntpath.basename(item).startswith(ntpath.basename(result_filename.rsplit('.')[0])):  # Result file
                     arg_d['result_file_l'].append(item)
                     print('Result file detected:', item)
                 else:
@@ -136,6 +142,11 @@ def check_tess_f():
 def check_write_f():
     try:
         test_loc = os.path.join(arg_d['output_dir'], 'rr_test_filename')
+
+        if not os.path.isdir(arg_d['output_dir']):
+            print('\n\n __Error: Output location must be a directory.\n\n')
+            return False
+        
         with open(test_loc, 'w', errors='replace') as output_file:
             output_file.write('TEST_TEXT')
 
@@ -400,7 +411,7 @@ def process_frames_f(frame_queue, name_d):
 
             # Select area above nameplate text
             # Crop as percent so unaffected by resolution
-            time_crop = time.perf_counter()
+            #time_crop = time.perf_counter()
             height, width = frame_na.shape[:2]
             x1_coord = int(width * .29)
             x2_coord = int(width * .71)
@@ -423,7 +434,7 @@ def process_frames_f(frame_queue, name_d):
             y1_coord = int(height * .69)  ##
             y2_coord = int(height * .73)
             crop_arr = frame_na[y1_coord:y2_coord, x1_coord:x2_coord]
-            time_crop_l.append(time.perf_counter() - time_crop)
+            #time_crop_l.append(time.perf_counter() - time_crop)
             
 
             # Get text from image, don't invert, whitelist ASCII chars, expect one line of text
@@ -532,7 +543,7 @@ if __name__ == '__main__':
     if not arg_d['output_dir']:
         arg_d['output_dir'] = os.getcwd()
 
-    output_loc = os.path.join(arg_d['output_dir'], result_filename)
+    output_loc = os.path.abspath(os.path.join(arg_d['output_dir'], result_filename))
 
 
     print(json.dumps(arg_d, indent=4))
@@ -584,7 +595,7 @@ if __name__ == '__main__':
     print('Ave kbits per sec:', round((sum(kbit_per_frame_l) / len(kbit_per_frame_l)) / duration))
     print('video capture ave:', sum(time_vcap_l) / len(time_vcap_l))
     print('frame read ave:', sum(time_fr_l) / len(time_fr_l))
-    print('time_crop_l ave:', sum(time_crop_l) / len(time_crop_l))
+    #print('time_crop_l ave:', sum(time_crop_l) / len(time_crop_l))
     print('OCR read ave:', sum(time_tess_l) / len(time_tess_l))
     print('\nVersion: 0.2.0-beta')
 
