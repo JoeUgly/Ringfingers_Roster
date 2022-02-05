@@ -29,7 +29,7 @@ kbit_per_frame_l = []  # Kbits per frame grand total
 # Phrases to remove from player names
 prefix_l = ['Phantom', 'Blue spirit', 'Blade of the Darkmoon', 'Dark spirit', 'Mad dark spirit', 'Aldrich Faithful', 'Loyal spirit, Aldrich Faithful', 'Watchdog of Farron', 'Loyal spirit, Watchdog of Farron', 'Task completed. Blade of the Darkmoon', 'Spear of the Church', 'Invaded the world of']
 suffix_l = ['summoned', 'has died', 'has returned home', 'summoned through concord!', 'summoned through concord', 'invaded', ', disturber of sleep', 'has returned to their world', 'has returned to their world.']
-no_suffix_l = ['Invaded the world of Host of Embers', 'Invaded by dark spirit', 'Invaded by mad dark spirit', 'Summoned to the world of Host of Embers', 'Invaded by Spear of the Church']
+no_suffix_l = ['Invaded the world of Host of Embers', 'Invaded by dark spirit', 'Invaded by mad dark spirit', 'Summoned to the world of Host of Embers', 'Invaded by Spear of the Church', 'Invaded by Aldrich Faithful']
 
 
 
@@ -120,8 +120,8 @@ def check_tess_f():
     # Tesseract executable must be on PATH or stated explicitly
     else:
         print('Running as a script')
-        # Uncomment next line and replace with your location of the Tesseract executable
-        pytesseract.tesseract_cmd = r"C:\Users\jschiffler\AppData\Local\Programs\Tesseract-OCR\tesseract.exe"
+        ## Uncomment next line and replace with your location of the Tesseract executable
+        #pytesseract.tesseract_cmd = r"C:\Users\jugly\AppData\Local\Programs\Tesseract-OCR\tesseract.exe"
 
     # Check if Tesseract is working
     try:
@@ -208,7 +208,7 @@ def clean_names_f(text):
     except Exception as errex:
         print('__Error on name cleanup:', errex)
         text += '__Error'
-        return text
+        return text  ##
 
 
 
@@ -422,11 +422,11 @@ def process_frames_f(frame_queue, name_d):
 
 
             # Calculate average brightness
-            rms = crop_arr.mean()
+            ave_bright = crop_arr.mean()
 
 
             # Skip if too dark or too bright, ie: nameplate not detected
-            if rms < 11 or rms > 14:  # Actual values: 12.46, 13.12
+            if ave_bright < 11 or ave_bright > 14:  # Actual values: 12.46, 13.12
                 continue
 
 
