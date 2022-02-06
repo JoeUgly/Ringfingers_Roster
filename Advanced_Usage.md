@@ -32,7 +32,7 @@ sudo apt-get install tesseract-ocr
 
 4\. Download the latest RR script located at: [ds3_rr_v0.2.0-beta.py](https://github.com/JoeUgly/Ringfingers_Roster/releases/download/ds3_rr_v0.2.0-beta/ds3_rr_v0.2.0-beta.py)
 
-5\. Add the Tesseract executable to your PATH or state it in the rr python script (variable name `pytesseract.tesseract_cmd`)
+5\. Add the Tesseract executable to your PATH or state it in the RR python script (variable name `pytesseract.tesseract_cmd`)
 
 
 
