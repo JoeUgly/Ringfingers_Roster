@@ -38,11 +38,14 @@ Simply place the executable file in the same folder as your videos and double cl
 <br/><br/>
 Alternatively, you can run the executable file from a CLI.\
 Example:\
-`C:\Users\jugly\Downloads\ds3_rr.exe C:\Users\jugly\Desktop\DS3Videos\`
+`C:\Users\jugly\Downloads\ds3_rr.exe "C:\Users\jugly\Desktop\DS3Videos\"`
 
 If no video folder is given, then it defaults to the folder containing the executable file.
 
 Running from a CLI may be mandatory on some systems (Linux).
+
+[See more examples](https://github.com/JoeUgly/Ringfingers_Roster/blob/main/examples.md)
+
 
 <br/><br/>
 #### Manual method
