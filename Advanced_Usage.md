@@ -154,7 +154,7 @@ Surprisingly, the biggest bottleneck in this program is opening and reading a fr
 
 
 <br/><br/>
-To speed up this process:\
+**To speed up processing:**\
 Move half of your videos to a different directory. Run an instance of this program on each directory.\
 Example:\
 `python3 ds3_rr.py /path/to/dir_1`
