@@ -121,7 +121,8 @@ Some messages consist of two lines and therefore the useful text is not in the e
 
 #### What video formats are allowed?
 Each video must have a file extension known to be a video format.\
-Your video formats are also limited to what OpenCV can read.
+Your video formats are also limited to what OpenCV can read.\
+Tested formats: webm (vp9), mkv (h264), mp4 (mov), mov (h264), wmv (wmv2), flv (flv1)
 
 Any file which does not begin with `ds3_rr_results` will be assumed to be a video. This program should identify errors related to trying to read a non-video file and skip to the next file.
 
