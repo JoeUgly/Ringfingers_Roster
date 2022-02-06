@@ -200,7 +200,7 @@ It probably means your distro is too old. Either upgrade, use the manual install
 
 <br/><br/>
 ### Checksums
-If you get an error similar stating something like `Failed to extract ... decompression resulted in return code`
+If you get an error similar to `Failed to extract ... decompression resulted in return code`
 Compare the values from the checksum file to make sure your file is not corrupted. A checksum file is included in each release.
 
 Example using Powershell:\
@@ -213,7 +213,7 @@ Example using Bash:\
 
 <br/><br/>
 ### Linux Permission Denied
-Be sure to allow executing file as a program.
+Be sure to allow executing file as a program. (Right click on file, properties)
 
 
 <br/><br/>
