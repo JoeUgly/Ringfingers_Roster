@@ -1,7 +1,5 @@
 # Ringfinger's Roster
 
-# ___ UNDER CONSTRUCTION ___
-
 ## Extract other players' names from your Dark Souls 3 gameplay videos
 
 
