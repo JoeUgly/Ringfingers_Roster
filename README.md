@@ -1,8 +1,3 @@
-<p align="center">
-
-    // Your content
-
-</p>
 # Ringfinger's Roster
 
 ## Extract other players' names from your Dark Souls 3 gameplay videos
