@@ -20,5 +20,7 @@ Run the executable with many options\
 Run the Python script with default options\
 `python C:\Users\jugly\Downloads\ds3_rr.py`
 
-
+<br/><br/>
+(All the above examples can also be applied to running the Python script)
+<br/><br/>
 
