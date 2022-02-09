@@ -18,7 +18,7 @@ test on manjaro
 use quotes in examples?
 attempt locate tess exe? os.path.expanduser("~")
 fallback to default number on unimportant errors like framerate?
-refactor main
+refactor main +
 test with thresh
 cv2.setNumThreads(n) +
 trailing exclam mark sometimes
@@ -71,6 +71,8 @@ sort result file. current sort is order they were found
 import ntpath
 only available on?
 
+
+https://api.github.com/repos/JoeUgly/Ringfingers_Roster/releases
 
 
 problem vids:
