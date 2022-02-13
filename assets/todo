@@ -9,6 +9,7 @@ doc cleanup
 
 
 # To do Stable:
+test perf of imageio.getreader()
 test perf of taller text box. high text will prob screw up rms and psm
 detect some common words like "summon" and "darkmoon" to help with long messages
 test more video formats
