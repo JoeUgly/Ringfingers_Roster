@@ -142,7 +142,7 @@ def check_tess_f():
     else:
         print('Running as a script')
         ## Uncomment next line and replace with your location of the Tesseract executable
-        pytesseract.tesseract_cmd = r"C:\Users\jschiffler\AppData\Local\Programs\Tesseract-OCR\tesseract.exe"
+        #pytesseract.tesseract_cmd = r"C:\Users\jugly\AppData\Local\Programs\Tesseract-OCR\tesseract.exe"
 
     # Check if Tesseract is working
     try:
@@ -432,10 +432,10 @@ def process_frames_f(frame_queue, name_d):
             # Crop as percent so unaffected by resolution
             #time_crop = time.perf_counter()
             height, width = frame_na.shape[:2]
-            x1_coord = int(width * .29)
-            x2_coord = int(width * .71)
-            y1_coord = int(height * .681)
-            y2_coord = int(height * .695)
+            x1_coord = round(width * .29)
+            x2_coord = round(width * .71)
+            y1_coord = round(height * .681)
+            y2_coord = round(height * .695)
 
             crop_arr = frame_na[y1_coord:y2_coord, x1_coord:x2_coord]  # Crop Numpy array with index operator because it's faster
 
@@ -450,8 +450,8 @@ def process_frames_f(frame_queue, name_d):
 
 
             # Reuse x coords for text crop
-            #y1_coord = int(height * .69)  ##
-            y2_coord = int(height * .73)
+            #y1_coord = round(height * .69)  ##
+            y2_coord = round(height * .73)
             crop_arr = frame_na[y1_coord:y2_coord, x1_coord:x2_coord]
             #time_crop_l.append(time.perf_counter() - time_crop)
             
