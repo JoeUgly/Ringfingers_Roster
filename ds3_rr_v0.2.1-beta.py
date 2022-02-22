@@ -81,7 +81,7 @@ def get_files_f(arg_l, arg_d):
         # File
         elif os.path.isfile(item):
             if os.access(item, os.R_OK):
-                if ntpath.basename(item).startswith(ntpath.basename(result_filename.rsplit('.')[0])):  # Result file
+                if ntpath.basename(item).startswith(ntpath.basename(result_filename.rsplit('.', maxsplit=1)[0])):  # Result file
                     arg_d['result_file_l'].append(item)
                     print('Result file detected:', item)
                 else:
