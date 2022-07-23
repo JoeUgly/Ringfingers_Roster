@@ -15,7 +15,7 @@
 
 <br/><br/>
 ## Summary
-Scans through your DS3 gameplay videos and records the name of each player who enters or leaves the world.\
+Scans through your DS3 gameplay videos and saves the name of each player who enters or leaves the world.\
 The program outputs a list of player names, along with the name of each video which they were found in.
 
 Use case:\
